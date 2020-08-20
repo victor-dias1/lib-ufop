@@ -12,6 +12,7 @@
     {
         die("Não foi possível se conectar ao banco de dados.");
     }
-    
-    $query = $conexao("INSERT INTO usuarios VALUES (123, 1, .victor., .dias., 123, .exemplo@gmail.com., .1234.)");
+
+    $query = "SELECT * FROM usuarios";
+    pg_fetch_array(pg_query($conexao , $query));
 ?>
