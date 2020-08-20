@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE php>
+<php>
   <head>
     <link rel="stylesheet" href="style.php" type="text/css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <title>Biblioteca</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -57,7 +57,7 @@
               <div class="form-group text-center">
                 <input id="register" type="submit" value="Register" class="btn btn-primary">
               </div>
-            </form><small>Already have an account? </small><a href="login.html" class="signup">Login</a>
+            </form><small>Already have an account? </small><a href="login.php" class="signup">Login</a>
           </div>
           <div class="copyrights text-center">
             <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
@@ -77,4 +77,4 @@
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>
-</html>
+</php>
