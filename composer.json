@@ -1,7 +1,9 @@
 {
-  "scripts": {
-    "compile": [
-      "chmod -R 777 *"
-    ]
+  "extra": {
+    "heroku": {
+      "compile": [
+        "chmod -R 755 /vendor"
+      ]
+    }
   }
 }
