@@ -1,5 +1,9 @@
-<!DOCTYPE php>
-<php>
+<!DOCTYPE html>
+<?php
+
+?>
+
+
   <head>
     <link rel="stylesheet" href="style.php" type="text/css">
     <meta charset="utf-8">
