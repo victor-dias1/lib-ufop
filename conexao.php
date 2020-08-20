@@ -14,5 +14,5 @@
     }
 
     $query = "SELECT * FROM usuarios";
-    echo pg_fetch_array(pg_query($conexao , $query));
+    echo pg_query($conexao , $query);
 ?>
