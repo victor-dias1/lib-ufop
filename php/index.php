@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="C:\Projeto UFOP\lib-ufop\css" type="text/css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bootstrap Dashboard by Bootstrapious.com</title>
