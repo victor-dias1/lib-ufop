@@ -14,5 +14,6 @@
     }
 
     $query = "SELECT * FROM usuarios";
-    echo $query;
+    $result = pg_query ($connection ,$query );
+    echo pg_fetch_result ($result , 0, 0);
 ?>
