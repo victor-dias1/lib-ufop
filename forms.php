@@ -210,9 +210,6 @@
             </div>
             <div class="col-lg-12">
               <div class="card">
-                <div class="card-header d-flex align-items-center">
-                  <h4>All form elements</h4>
-                </div>
                 <div class="card-body">
                   <form class="form-horizontal">
                     <div class="form-group row">
