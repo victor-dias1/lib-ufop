@@ -12,8 +12,4 @@
     {
         die("Não foi possível se conectar ao banco de dados.");
     }
-
-    $query = "SELECT * FROM usuarios";
-    $result = pg_query ($connection ,$query );
-    echo pg_fetch_result ($result , 0, 0);
 ?>

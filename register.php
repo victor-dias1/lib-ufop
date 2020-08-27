@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+
+?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,9 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor_new/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor_new/font-awesome/css/font-awesome.min.css">
     <!-- Fontastic Custom icon font-->
     <link rel="stylesheet" href="css/fontastic.css">
     <!-- Google fonts - Roboto -->
@@ -18,7 +21,7 @@
     <!-- jQuery Circle-->
     <link rel="stylesheet" href="css/grasp_mobile_progress_circle-1.0.0.min.css">
     <!-- Custom Scrollbar-->
-    <link rel="stylesheet" href="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="vendor_new/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
@@ -66,13 +69,13 @@
       </div>
     </div>
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor_new/jquery/jquery.min.js"></script>
+    <script src="vendor_new/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
-    <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="vendor_new/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor_new/chart.js/Chart.min.js"></script>
+    <script src="vendor_new/jquery-validation/jquery.validate.min.js"></script>
+    <script src="vendor_new/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="js/front.js"></script>
   </body>
