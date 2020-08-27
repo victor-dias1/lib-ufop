@@ -47,7 +47,7 @@
         </div>
         <!-- Sidebar Navigation Menus-->
         <div class="main-menu">
-          <h5 class="sidenav-heading">Main</h5>
+          <h5 class="sidenav-heading">Menu</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">
             <li><a href="index.php"> <i class="icon-home"></i>Página Inicial                                           </a></li>
             <li><a href="forms.php"> <i class="icon-form"></i>Formulários                                              </a></li>
