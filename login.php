@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <title>Biblioteca</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -47,10 +47,10 @@
                 <input id="login-password" type="password" name="loginPassword" required data-msg="Please enter your password" class="input-material">
                 <label for="login-password" class="label-material">Senha</label>
               </div>
-              <div class="form-group text-center"><a id="login" href="index.php" class="btn btn-primary">Fazer Login</a>
+              <div class="form-group text-center"><a id="login" href="index.php" class="btn btn-primary">Fazer login</a>
                 <!-- This should be submit button but I replaced it with <a> for demo purposes-->
               </div>
-            </form><a href="#" class="forgot-pass">Esqueceu a senha?</a><small>Não tem uma conta? </small><a href="register.php" class="signup">Criar Conta</a>
+            </form><a href="#" class="forgot-pass">Esqueceu a senha?</a><small>Não tem uma conta? </small><a href="register.php" class="signup">Crie aqui!</a>
           </div>
           <div class="copyrights text-center">
             <p>Design by <a href="https://bootstrapious.com/p/bootstrap-4-dashboard" class="external">Bootstrapious</a></p>
