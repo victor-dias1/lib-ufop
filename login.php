@@ -37,7 +37,7 @@
       <div class="container">
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
-            <div class="logo text-uppercase"><span>Biblio</span><strong class="text-primary">teca</strong></div>
+            <div class="logo text-uppercase"><span>     Biblio</span><strong class="text-primary">teca     </strong></div>
             <form method="get" class="text-left form-validate">
               <div class="form-group-material">
                 <input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" class="input-material">
