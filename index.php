@@ -38,6 +38,13 @@
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
             <div class="logo text-uppercase"><span>Bootstrap</span><strong class="text-primary">Dashboard</strong></div>
+            <?php
+                if(isset($_SESSION['msg']))
+                {
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                }
+            ?>
             <form method="POST" action="valida.php" class="text-left form-validate">
               <div class="form-group-material">
                 <input id="login-username" type="text" name="loginUsername" required data-msg="Digite seu usuário" class="input-material">
