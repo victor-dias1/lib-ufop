@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-
+    session_start();
 ?>
 <html>
   <head>
@@ -38,16 +38,16 @@
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
             <div class="logo text-uppercase"><span>Bootstrap</span><strong class="text-primary">Dashboard</strong></div>
-            <form method="get" class="text-left form-validate">
+            <form method="POST" action="valida.php" class="text-left form-validate">
               <div class="form-group-material">
-                <input id="login-username" type="text" name="loginUsername" required data-msg="Please enter your username" class="input-material">
+                <input id="login-username" type="text" name="loginUsername" required data-msg="Digite seu usuário" class="input-material">
                 <label for="login-username" class="label-material">Usuário</label>
               </div>
               <div class="form-group-material">
-                <input id="login-password" type="password" name="loginPassword" required data-msg="Please enter your password" class="input-material">
+                <input id="login-password" type="password" name="loginPassword" required data-msg="Digite sua senha" class="input-material">
                 <label for="login-password" class="label-material">Senha</label>
               </div>
-              <div class="form-group text-center"><a id="login" href="index.php" class="btn btn-primary">Fazer login</a>
+              <div class="form-group text-center"><a id="login" name="btnLogin" href="index.php" class="btn btn-primary">Fazer login</a>
                 <!-- This should be submit button but I replaced it with <a> for demo purposes-->
               </div>
             </form><a href="#" class="forgot-pass">Esqueceu a senha?</a><small>Não tem uma conta? </small><a href="register.php" class="signup">Crie aqui!</a>
