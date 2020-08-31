@@ -49,7 +49,7 @@
               </div>
               <div class="form-group text-center">
                 <!-- <a id="login" href="valida.php" class="btn btn-primary">Fazer login</a> -->
-                <input type="submit" name="btnLogin" value="Fazer login">
+                <input type="submit" name="btnLogin" value="Fazer login" class="btn btn-primary" id="login">
               </div>
             </form><a href="#" class="forgot-pass">Esqueceu a senha?</a><small>Não tem uma conta? </small><a href="register.php" class="signup">Crie aqui!</a>
           </div>
