@@ -47,8 +47,8 @@
                 <input id="login-password" type="password" name="loginPassword" required data-msg="Digite sua senha" class="input-material">
                 <label for="login-password" class="label-material">Senha</label>
               </div>
-              <div class="form-group text-center"><a id="login" href="valida.php" class="btn btn-primary">Fazer login</a>
-                <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+              <div class="form-group text-center">
+                <!-- <a id="login" href="valida.php" class="btn btn-primary">Fazer login</a> -->
                 <input type="submit" name="btnLogin" value="Fazer login">
               </div>
             </form><a href="#" class="forgot-pass">Esqueceu a senha?</a><small>Não tem uma conta? </small><a href="register.php" class="signup">Crie aqui!</a>
