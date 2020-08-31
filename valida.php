@@ -22,7 +22,7 @@
                     $_SESSION['pnome'] = $row_usuario['pnome'];
                     $_SESSION['email'] = $row_usuario['email'];
                 }else{
-                    $_SESSION['msg'] = "Senha incorreta!";
+                    $_SESSION['msg'] = "Usuário ou Senha incorretos!";
                     header("Location: index.php");
                 }  
             }
