@@ -26,9 +26,6 @@
                     header("Location: index.php");
                 }  
             }
-        }else{
-            $_SESSION['msg'] = "Digite um usuário e uma senha!";
-            header("Location: index.php");
         }
     }else{
         $_SESSION['msg'] = "Página não encontrada";
