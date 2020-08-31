@@ -37,7 +37,10 @@
       <div class="container">
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
-            <div class="logo text-uppercase"><span>Bootstrap</span><strong class="text-primary">Dashboard</strong></div>
+            <div class="logo text-uppercase">
+              <span>Bootstrap</span>
+              <strong class="text-primary">Dashboard</strong>
+            </div>
             <?php
                 if(isset($_SESSION['msg']))
                 {
@@ -55,10 +58,12 @@
                 <label for="login-password" class="label-material">Senha</label>
               </div>
               <div class="form-group text-center">
-                <!-- <a id="login" href="valida.php" class="btn btn-primary">Fazer login</a> -->
                 <input type="submit" name="btnLogin" value="Fazer login" class="btn btn-primary" id="login">
               </div>
-            </form><a href="#" class="forgot-pass">Esqueceu a senha?</a><small>Não tem uma conta? </small><a href="register.php" class="signup">Crie aqui!</a>
+            </form>
+            <a href="#" class="forgot-pass">Esqueceu a senha?</a>
+            <small>Não tem uma conta? </small>
+            <a href="register.php" class="signup">Crie aqui!</a>
           </div>
           <div class="copyrights text-center">
             <p>Design by <a href="https://bootstrapious.com/p/bootstrap-4-dashboard" class="external">Bootstrapious</a></p>

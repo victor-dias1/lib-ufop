@@ -31,7 +31,5 @@
         $_SESSION['msg'] = "Página não encontrada";
         header("Location: index.php");
     }
-
-
 ?>
 
