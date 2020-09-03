@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <?php
     session_start();
-    if(!isset($_SESSION['cpf']))
-    {
-      $_SESSION['msg'] = 'Faça o Login para continuar!';
-      header("Location: index.php");
-    }
 ?>
 <html>
   <head>
@@ -43,7 +38,7 @@
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
             <div class="logo text-uppercase"><span>Dash</span><strong class="text-primary">Express</strong></div>
-            <form class="text-left form-validate">
+            <form method="POST" action="processa.php" class="text-left form-validate">
               <div class="form-group-material">
                 <input id="register-username" type="text" name="registerUsername" required data-msg="Please enter your username" class="input-material">
                 <label for="register-username" class="label-material">Nome completo:</label>
@@ -53,7 +48,7 @@
                 <label for="register-email" class="label-material">Email:      </label>
               </div>
               <div class="form-group-material">
-                <input id="register-password" type="password" name="registerPassword" required data-msg="Please enter your password" class="input-material">
+                <input id="register-password" type="text" name="registerPassword" required data-msg="Please enter your password" class="input-material">
                 <label for="register-password" class="label-material">Senha:        </label>
               </div>
               <div class="form-group terms-conditions text-center">
@@ -63,7 +58,9 @@
               <div class="form-group text-center">
                 <input id="register" type="submit" value="Cadastrar" class="btn btn-primary">
               </div>
-            </form><small>Já possui uma conta? </small><a href="login.php" class="signup">Logar</a>
+            </form>
+            <small>Já possui uma conta? </small>
+            <a href="login.php" class="signup">Logar</a>
           </div>
           <div class="copyrights text-center">
             <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
