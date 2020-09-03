@@ -9,7 +9,8 @@
 
     $result_user = "INSERT INTO usuarios (pnome, email, senha) VALUES ('$nome', '$email', '$senha')";
     $result_query = pg_query($conexao, $result_user);
-    echo pg_last_error($result_query);
+    echo "$result_query";
+    echo "pg_last_error($result_query)";
 
     if($result_query){
         $_SESSION['msg'] = "<p style='color:green;'>Usuário Cadastrado com sucesso!</p>";
