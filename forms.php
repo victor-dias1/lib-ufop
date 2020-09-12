@@ -144,7 +144,7 @@
                       <input type="text" class="form-control" name="sessao">
                     </div>
                     <div class="form-group">       
-                      <input type="submit" value="Signin" class="btn btn-primary">
+                      <input type="submit" value="Cadastrar" class="btn btn-primary">
                     </div>
                   </form>
                 </div>

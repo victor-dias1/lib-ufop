@@ -114,7 +114,7 @@
             <div class="col-lg-6">
               <div class="card">
                 <div class="card-header">
-                  <h4>Basic Table</h4>
+                  <h4>Empréstimos em andamento</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -122,9 +122,9 @@
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
+                          <th>Aluno</th>
+                          <th>Código Exemplar</th>
+                          <th>Matrícula</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -152,7 +152,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
+            <!--<div class="col-lg-6">
               <div class="card">
                 <div class="card-header">
                   <h4>Striped Table</h4>
@@ -192,8 +192,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-6">
+            </div>-->
+            <!--<div class="col-lg-6">
               <div class="card">
                 <div class="card-header">
                   <h4>Striped table with hover effect</h4>
@@ -233,8 +233,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-6">
+            </div>-->
+            <!--<div class="col-lg-6">
               <div class="card">
                 <div class="card-header">
                   <h4>Compact Table</h4>
@@ -292,7 +292,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
       </section>
