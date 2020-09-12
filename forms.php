@@ -119,12 +119,28 @@
                   <p>Lorem ipsum dolor sit amet consectetur.</p>
                   <form>
                     <div class="form-group">
-                      <label>Email</label>
-                      <input type="email" placeholder="Email Address" class="form-control">
+                      <label>id</label>
+                      <input type="text" class="form-control" name="id_livro">
+                    </div>
+                    <div class="form-group">
+                      <label>Título</label>
+                      <input type="text" class="form-control" name="titulo">
+                    </div>
+                    <div class="form-group">
+                      <label>ISBN</label>
+                      <input type="text" class="form-control" name="isbn">
                     </div>
                     <div class="form-group">       
-                      <label>Password</label>
-                      <input type="password" placeholder="Password" class="form-control">
+                      <label>Autor</label>
+                      <input type="text" class="form-control" name="autor">
+                    </div>
+                    <div class="form-group">       
+                      <label>Edicão</label>
+                      <input type="text" class="form-control" name="edicao">
+                    </div>
+                    <div class="form-group">       
+                      <label>Sessão</label>
+                      <input type="text" class="form-control" name="sessao">
                     </div>
                     <div class="form-group">       
                       <input type="submit" value="Signin" class="btn btn-primary">
