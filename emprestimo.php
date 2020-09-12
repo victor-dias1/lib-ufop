@@ -55,8 +55,8 @@
           <h5 class="sidenav-heading">Menu</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
             <li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
-            <li class="active"><a href="forms.php"> <i class="icon-form"></i>Cadastrar                                </a></li>
-            <li class="active"><a href="emprestimo.php"> <i class="icon-form"></i>Empréstimo                                </a></li>
+            <li><a href="forms.php"> <i class="icon-form"></i>Cadastrar                                              </a></li>
+            <li><a href="emprestimo.php"> <i class="icon-form"></i>Empréstimo                                </a></li>
             <li><a href="tables.php"> <i class="icon-grid"></i>Tabelas                                                 </a></li>
             <li><a href="index.php"> <i class="icon-interface-windows"></i>Página de Login                              </a></li>
           </ul>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="form-group">       
                       <label>Data de devolução</label>
-                      <input type="text" class="form-control" name="date_dev">
+                      <input type="date" class="form-control" name="date_dev">
                     </div>
                     <div class="form-group">       
                       <input type="submit" value="Signin" class="btn btn-primary">
@@ -142,7 +142,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
+            <!--<div class="col-lg-6">
               <div class="card">
                 <div class="card-header d-flex align-items-center">
                   <h4>Horizontal Form</h4>
@@ -174,8 +174,8 @@
                   </form>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-8">
+            </div>-->
+            <!--<div class="col-lg-8">
               <div class="card">
                 <div class="card-header d-flex align-items-center">
                   <h4>Inline Form</h4>
@@ -196,15 +196,15 @@
                   </form>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4">
+            </div>-->
+            <!--<div class="col-lg-4">
               <div class="card">
                 <div class="card-header d-flex align-items-center">
                   <h4>Modal Form</h4>
                 </div>
                 <div class="card-body text-center">
                   <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Form in simple modal </button>
-                  <!-- Modal-->
+                   Modal
                   <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                     <div role="document" class="modal-dialog">
                       <div class="modal-content">
@@ -237,7 +237,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-body">
@@ -245,7 +245,7 @@
                     <div class="form-group row">
                       <div class="col-sm-4 offset-sm-2">
                         <button type="submit" class="btn btn-secondary">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Savar Mudanças</button>
+                        <button type="submit" class="btn btn-primary">Submeter</button>
                       </div>
                     </div>
                   </form>
