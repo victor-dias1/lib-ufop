@@ -38,7 +38,7 @@
         <div class="form-outer text-center d-flex align-items-center">
           <div class="form-inner">
             <div class="logo text-uppercase"><span>Dash</span><strong class="text-primary">Express</strong></div>
-            <form method="POST" action="processa.php" class="text-left form-validate">
+            <form method="POST" action="processaUsuario.php" class="text-left form-validate">
               <div class="form-group-material">
                 <input id="register-username" type="text" name="registerCPF" required data-msg="Please enter your username" class="input-material">
                 <label for="register-username" class="label-material">CPF:</label>
