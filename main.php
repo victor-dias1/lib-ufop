@@ -51,13 +51,13 @@
           <div class="sidenav-header-logo"><a href="main.php" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
         </div>
         <!-- Sidebar Navigation Menus-->
-        <div class="main-menu">
+        <<div class="main-menu">
           <h5 class="sidenav-heading">Menu</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
             <li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
-            <li><a href="forms.php"> <i class="icon-form"></i>Cadastrar                                              </a></li>
-            <li><a href="emprestimo.php"> <i class="icon-form"></i>Empréstimo                                </a></li>
-            <li><a href="tables.php"> <i class="icon-grid"></i>Tabelas                                                 </a></li>
+            <li><a href="forms.php"> <i class="icon-form"></i>Cadastrar Livro                                             </a></li>
+            <li><a href="emprestimo.php"> <i class="icon-form"></i>Realizar Empréstimo                                </a></li>
+            <li><a href="tables.php"> <i class="icon-grid"></i>Listar Empréstimos                                                 </a></li>
             <li><a href="index.php"> <i class="icon-interface-windows"></i>Página de Login                              </a></li>
           </ul>
         </div>
