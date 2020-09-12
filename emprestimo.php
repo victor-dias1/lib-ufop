@@ -108,40 +108,32 @@
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
-            <h1 class="h3 display">Forms            </h1>
+            <h1 class="h3 display">Gerenciar           </h1>
           </header>
           <div class="row">
             <div class="col-lg-6">
               <div class="card">
                 <div class="card-header d-flex align-items-center">
-                  <h4>Cadastrar Livro</h4>
+                  <h4>Realizar Empréstimo</h4>
                 </div>
                 <div class="card-body">
                   <p>Lorem ipsum dolor sit amet consectetur.</p>
                   <form>
                     <div class="form-group">
-                      <label>id</label>
-                      <input type="text" class="form-control" name="id_livro">
+                      <label>Matrícula</label>
+                      <input type="text" class="form-control" name="matricula">
                     </div>
                     <div class="form-group">
-                      <label>Título</label>
-                      <input type="text" class="form-control" name="titulo">
+                      <label>Codigo do exemplar</label>
+                      <input type="text" class="form-control" name="cod_exemplar">
                     </div>
                     <div class="form-group">
-                      <label>ISBN</label>
-                      <input type="text" class="form-control" name="isbn">
+                      <label>Data do empréstimo</label>
+                      <input type="date" class="form-control" name="date_emp">
                     </div>
                     <div class="form-group">       
-                      <label>Autor</label>
-                      <input type="text" class="form-control" name="autor">
-                    </div>
-                    <div class="form-group">       
-                      <label>Edicão</label>
-                      <input type="text" class="form-control" name="edicao">
-                    </div>
-                    <div class="form-group">       
-                      <label>Sessão</label>
-                      <input type="text" class="form-control" name="sessao">
+                      <label>Data de devolução</label>
+                      <input type="text" class="form-control" name="date_dev">
                     </div>
                     <div class="form-group">       
                       <input type="submit" value="Signin" class="btn btn-primary">
