@@ -40,8 +40,24 @@
             <div class="logo text-uppercase"><span>Dash</span><strong class="text-primary">Express</strong></div>
             <form method="POST" action="processa.php" class="text-left form-validate">
               <div class="form-group-material">
-                <input id="register-username" type="text" name="registerUsername" required data-msg="Please enter your username" class="input-material">
-                <label for="register-username" class="label-material">Nome completo:</label>
+                <input id="register-username" type="text" name="registerCPF" required data-msg="Please enter your username" class="input-material">
+                <label for="register-username" class="label-material">CPF:</label>
+              </div>
+              <div class="form-group-material">
+                <input id="register-username" type="text" name="registerType" required data-msg="Please enter your username" class="input-material">
+                <label for="register-username" class="label-material">Tipo de Usuário:</label>
+              </div>
+              <div class="form-group-material">
+                <input id="register-username" type="text" name="registerPName" required data-msg="Please enter your username" class="input-material">
+                <label for="register-username" class="label-material">Nome:</label>
+              </div>
+              <div class="form-group-material">
+                <input id="register-username" type="text" name="registerUName" required data-msg="Please enter your username" class="input-material">
+                <label for="register-username" class="label-material">Sobrenome:</label>
+              </div>
+              <div class="form-group-material">
+                <input id="register-username" type="text" name="registerMatricula" required data-msg="Please enter your username" class="input-material">
+                <label for="register-username" class="label-material">Matrícula:</label>
               </div>
               <div class="form-group-material">
                 <input id="register-email" type="email" name="registerEmail" required data-msg="Please enter a valid email address" class="input-material">
