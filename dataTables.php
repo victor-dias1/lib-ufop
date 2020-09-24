@@ -6,6 +6,7 @@
     <title>DataTables</title>
     <link rel="stylesheet" href="cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <script src="cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script type="text/javascript" language="javascript">
         $(document).ready( function (){
         $('#table_id').DataTable();
