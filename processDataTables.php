@@ -30,8 +30,8 @@ $resultado_usuarios=pg_query($conexao, $result_usuarios);
 $totalFiltered = pg_num_rows($resultado_usuarios);
 
 //Ordenar o resultado
-$result_usuarios.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."  LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
-$resultado_usuarios = pg_query($conexao, $result_usuarios);
+//$result_usuarios.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."  LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
+//$resultado_usuarios = pg_query($conexao, $result_usuarios);
 
 // Ler e criar o array de dados
 $dados = array();
