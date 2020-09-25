@@ -14,7 +14,7 @@ $columns = array(
 );
 
 //Obtendo registros de número total sem qualquer pesquisa
-$result_user = "SELECT * FROM usuarios";
+$result_user = "SELECT pnome, unome, matricula FROM usuarios";
 $resultado_user = pg_query($conexao, $result_user);
 $qnt_linhas = pg_num_rows($resultado_user);
 
@@ -35,7 +35,7 @@ $resultado_usuarios=pg_query($conexao, $result_usuarios);
 
 // Ler e criar o array de dados
 $dados = array();
-while( $row_usuarios =pg_fetch_array($resultado_usuarios) ) {  
+while( $row_usuarios = pg_fetch_array($resultado_usuarios) ) {  
 	$dado = array(); 
 	$dado[] = $row_usuarios["pnome"];
 	$dado[] = $row_usuarios["unome"];
