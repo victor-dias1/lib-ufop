@@ -8,9 +8,9 @@ $requestData= $_REQUEST;
 
 //Indice da coluna na tabela visualizar resultado => nome da coluna no banco de dados
 $columns = array( 
-	0 =>'pnome', 
-	1 => 'unome',
-	2=> 'matricula'
+	array ( '0' =>'pnome'), 
+	array ( '1' => 'unome'),
+    array ( '2' => 'matricula')
 );
 
 //Obtendo registros de número total sem qualquer pesquisa
@@ -31,7 +31,7 @@ $totalFiltered = pg_num_rows($resultado_usuarios);
 
 //Ordenar o resultado
 $result_usuarios.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."  LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
-$resultado_usuarios=pg_query($conexao, $result_usuarios);
+$resultado_usuarios = pg_query($conexao, $result_usuarios);
 
 // Ler e criar o array de dados
 $dados = array();
