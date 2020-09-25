@@ -21,7 +21,7 @@
 				"processing": true,
 				"serverSide": true,
 				"ajax": {
-					"url": "proc_pesq_user.php",
+					"url": "processaDataTables.php",
 					"type": "POST"
 				}
 			});
