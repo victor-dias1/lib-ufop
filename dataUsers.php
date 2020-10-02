@@ -27,17 +27,42 @@
 			});
 		} );
 		</script>
+		<!-- Bootstrap CSS-->
+    	<link rel="stylesheet" href="vendor_new/bootstrap/css/bootstrap.min.css">
+    	<!-- Font Awesome CSS-->
+    	<link rel="stylesheet" href="vendor_new/font-awesome/css/font-awesome.min.css">
+    	<!-- Fontastic Custom icon font-->
+    	<link rel="stylesheet" href="css/fontastic.css">
+    	<!-- Google fonts - Roboto -->
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    	<!-- jQuery Circle-->
+   		<link rel="stylesheet" href="css/grasp_mobile_progress_circle-1.0.0.min.css">
+    	<!-- Custom Scrollbar-->
+    	<link rel="stylesheet" href="vendor_new/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    	<!-- theme stylesheet-->
+    	<link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    	<!-- Custom stylesheet - for your changes-->
+    	<link rel="stylesheet" href="css/custom.css">
+    	<!-- Favicon-->
+    	<link rel="shortcut icon" href="img/favicon.ico">
+    	<!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 	</head>
 	<body>
 		<h1>Usuários</h1>
-		<table id="listar-usuario" class="display">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Sobrenome</th>
-                    <th>Matrícula</th>
-                </tr>
-			</thead>
-		</table>
+		<div class="card-body">
+            <div class="table-responsive">
+				<table id="listar-usuario" class="display">
+            		<thead>
+                		<tr>
+                    		<th>Nome</th>
+                    		<th>Sobrenome</th>
+                    		<th>Matrícula</th>
+                		</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
 	</body>
 </html>
