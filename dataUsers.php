@@ -21,7 +21,7 @@
 				"processing": true,
 				"serverSide": true,
 				"ajax": {
-					"url": "processDataTables.php",
+					"url": "processDataUsers.php",
 					"type": "POST"
 				}
 			});
