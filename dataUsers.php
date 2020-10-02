@@ -30,14 +30,8 @@
 	</head>
 	<body>
 		<h1>Usuários</h1>
-		<table id="listar-usuario" class="display" style="width:100%">
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Sobrenome</th>
-					<th>Matrícula</th>
-				</tr>
-			</thead>
-		</table>	
+		<table id="listar-usuario"
+            class="table table-striped table-bordered dt-responsive datatable"
+            style="border-collapse: collapse; border-spacing: 5; width: 100%;">
 	</body>
 </html>
