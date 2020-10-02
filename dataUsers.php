@@ -88,6 +88,70 @@
          	</ul>
         	</div>
       		</div>
-    	</nav>		
+		</nav>
+		<!-- navbar-->
+		<header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header">
+                <a id="toggle-btn" href="#" class="menu-btn">
+                  <i class="icon-bars"></i>
+                </a>
+                <a href="main.php" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block">
+                    <span>Bootstrap </span>
+                    <strong class="text-primary">Dashboard</strong>
+                  </div>
+                </a>
+              </div>
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Log out-->
+                <li class="nav-item">
+                  <a href="logout.php" class="nav-link logout"> 
+                    <span class="d-none d-sm-inline-block">Logout</span>
+                    <i class="fa fa-sign-out"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+		  </header>
+		  <!-- Breadcrumb-->
+		  <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="main.php">Página Inicial</a>
+            </li>
+            <li class="breadcrumb-item active">Tabelas </li>
+          </ul>
+        </div>
+	  </div>
+	  <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Your company &copy; 2017-2020</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by <a href="https://bootstrapious.com/p/bootstrap-4-dashboard" class="external">Bootstrapious</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor_new/jquery/jquery.min.js"></script>
+    <script src="vendor_new/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="vendor_new/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor_new/chart.js/Chart.min.js"></script>
+    <script src="vendor_new/jquery-validation/jquery.validate.min.js"></script>
+    <script src="vendor_new/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Main File-->
+    <script src="js/front.js"></script>		
 	</body>
 </html>
