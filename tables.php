@@ -120,6 +120,16 @@
         </div>
       </div>
       <section>
+      <h1>Usuários</h1>
+		<table id="listar-usuario" class="display" style="width:100%">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Sobrenome</th>
+					<th>Matrícula</th>
+				</tr>
+			</thead>
+		</table>
         <!-- <div class="container-fluid">
           Page Header
           <header> 
