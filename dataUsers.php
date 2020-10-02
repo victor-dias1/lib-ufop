@@ -30,13 +30,13 @@
 	</head>
 	<body>
 		<h1>Usuários</h1>
-		<table id="listar-usuario" class="display" style="width:100%">
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Sobrenome</th>
-					<th>Matrícula</th>
-				</tr>
+		<table id="listar-usuario" class="display">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Matrícula</th>
+                </tr>
 			</thead>
 		</table>
 	</body>
