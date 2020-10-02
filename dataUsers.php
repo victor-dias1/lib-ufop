@@ -64,5 +64,27 @@
 				</table>
 			</div>
 		</div>
-	</body>
+		<nav class="side-navbar">
+      		<div class="side-navbar-wrapper">
+        		<!-- Sidebar Header    -->
+        		<div class="sidenav-header d-flex align-items-center justify-content-center">
+          		<!-- User Info-->
+          		<div class="sidenav-header-inner text-center"><img src="img/avatar-7.jpeg" alt="person" class="img-fluid rounded-circle">
+            		<h2 class="h5">Victor Dias</h2><span>Web Developer</span>
+          		</div>
+          		<!-- Small Brand information, appears on minimized sidebar-->
+          		<div class="sidenav-header-logo"><a href="main.php" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
+        		</div>
+        		<!-- Sidebar Navigation Menus-->
+        		<div class="main-menu">
+          		<h5 class="sidenav-heading">Menu</h5>
+          		<ul id="side-main-menu" class="side-menu list-unstyled">                  
+            		<li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
+            		<li><a href="dataUsers.php"> <i class="icon-form"></i>Usuários                                             </a></li>
+            		<li><a href="dataBooks.php"> <i class="icon-form"></i>Livros                                               </a></li>
+          		</ul>
+        		</div>
+      		</div>
+    	</nav>
+	</body>	
 </html>
