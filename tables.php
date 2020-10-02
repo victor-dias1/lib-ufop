@@ -137,11 +137,11 @@
             <div class="col-lg-6">
               <div class="card">
                 <div class="card-header">
-                  <h4>Empréstimos em andamento</h4>
+                  <h4>Usuários</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table id="listar-usuario" class="table">
+                    <table id="listar-usuario" class="display">
                       <thead>
                         <tr>
                           <th>Aluno</th>
