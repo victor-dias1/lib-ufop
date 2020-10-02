@@ -128,7 +128,7 @@
         </div>
       </div>
       <section>
-        <!-- <div class="container-fluid">
+        <div class="container-fluid">
           Page Header
           <header> 
             <h1 class="h3 display">Tabelas            </h1>
