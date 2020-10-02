@@ -17,7 +17,7 @@
 		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" language="javascript">
 		$(document).ready(function() {
-			$('#listar-usuario').DataTable({			
+			$('#listar-livros').DataTable({			
 				"processing": true,
 				"serverSide": true,
 				"ajax": {
