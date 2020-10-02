@@ -51,7 +51,7 @@
           <div class="sidenav-header-logo"><a href="main.php" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
         </div>
         <!-- Sidebar Navigation Menus-->
-        <<div class="main-menu">
+        <div class="main-menu">
           <h5 class="sidenav-heading">Menu</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
             <li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
