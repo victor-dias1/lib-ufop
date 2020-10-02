@@ -108,16 +108,6 @@
           </div>
         </nav>
       </header>
-      <h1>Usuários</h1>
-		<table id="listar-usuario" class="display" style="width:100%">
-			<thead>
-				<tr>
-					<th>Nome</th>
-					<th>Sobrenome</th>
-					<th>Matrícula</th>
-				</tr>
-			</thead>
-		</table>	
       <!-- Breadcrumb-->
       <div class="breadcrumb-holder">
         <div class="container-fluid">
@@ -130,8 +120,8 @@
         </div>
       </div>
       <section>
-        <div class="container-fluid">
-          <!-- Page Header-->
+        <!-- <div class="container-fluid">
+          Page Header
           <header> 
             <h1 class="h3 display">Tabelas            </h1>
           </header>
@@ -176,7 +166,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
             <!--<div class="col-lg-6">
               <div class="card">
                 <div class="card-header">
