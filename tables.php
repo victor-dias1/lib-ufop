@@ -82,7 +82,6 @@
             <li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
             <li><a href="dataUsers.php"> <i class="icon-form"></i>Usuários                                             </a></li>
             <li><a href="dataBooks.php"> <i class="icon-form"></i>Livros                                               </a></li>
-            <li><a href="index.php"> <i class="icon-interface-windows"></i>Página de Login                             </a></li>
           </ul>
         </div>
       </div>
