@@ -30,7 +30,7 @@
 	</head>
 	<body>
 		<h1>Usuários</h1>
-		<table id="listar-livros" class="display" style="width:100%">
+		<table id="listar-usuario" class="display" style="width:100%">
 			<thead>
 				<tr>
 					<th>Nome</th>
