@@ -53,7 +53,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
-    <h1>Usuários</h1>
+    <!--<h1>Usuários</h1>
 		    <table id="listar-usuario" class="display" style="width:100%">
 			    <thead>
 				  <tr>
@@ -62,7 +62,7 @@
 					  <th>Matrícula</th>
 				  </tr>
 			    </thead>
-		    </table>
+		    </table>-->
     <!-- Side Navbar -->
     <nav class="side-navbar">
       <div class="side-navbar-wrapper">
@@ -141,16 +141,15 @@
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table">
+                    <table id="listar-usuario" class="table">
                       <thead>
                         <tr>
-                          <th>#</th>
                           <th>Aluno</th>
                           <th>Código Exemplar</th>
                           <th>Matrícula</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <!--<tbody>
                         <tr>
                           <th scope="row">1</th>
                           <td>Mark</td>
@@ -168,7 +167,7 @@
                           <td>Larry</td>
                           <td>the Bird</td>
                           <td>@twitter</td>
-                        </tr>
+                        </tr>-->
                       </tbody>
                     </table>
                   </div>
