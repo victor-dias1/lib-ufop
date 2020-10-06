@@ -51,22 +51,18 @@
 	</head>
 	<body>
 		<h1>Usuários</h1>
-			<div class="col-lg-8">
-				<div class="card-body">
-					<div class="card-header d-flex align-items-center">
-            			<div class="table-responsive">
-							<table id="listar-usuario" class="display">
-            					<thead>
-                					<tr>
-                    					<th>Nome</th>
-                    					<th>Sobrenome</th>
-                    					<th>Matrícula</th>
-                					</tr>
-								</thead>
-							</table>
-						</div>
+			<div class="col-lg-10">
+            		<div class="table-responsive">
+						<table id="listar-usuario" class="display">
+            				<thead>
+                				<tr>
+                    				<th>Nome</th>
+                    				<th>Sobrenome</th>
+                    				<th>Matrícula</th>
+                				</tr>
+							</thead>
+						</table>
 					</div>
-				</div>
 			</div>
 		<nav class="side-navbar">
       		<div class="side-navbar-wrapper">
@@ -76,7 +72,8 @@
           		<div class="sidenav-header-inner text-center"><img src="img/avatar-7.jpeg" alt="person" class="img-fluid rounded-circle">
             		<h2 class="h5">Victor Dias</h2><span>Web Developer</span>
           		</div>
-          		<!-- Small Brand information, appears on minimized sidebar-->
+          		<!-- <div class="card-body">
+					<div class="card-header d-flex align-items-center">Small Brand information, appears on minimized sidebar-->
           		<div class="sidenav-header-logo"><a href="main.php" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
         		</div>
         		<!-- Sidebar Navigation Menus-->
