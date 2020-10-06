@@ -52,6 +52,7 @@
 	<body>
 		<h1>Usuários</h1>
 		<div class="col-lg-8">
+		<div class="row justify-content-md-center">
 			<div class="card-body">
             	<div class="table-responsive">
 					<table id="listar-usuario" class="display">
@@ -63,8 +64,9 @@
                 			</tr>
 						</thead>
 					</table>
-			<	/div>
+				</div>
 			</div>
+		</div>
 		</div>
 		<nav class="side-navbar">
       		<div class="side-navbar-wrapper">
