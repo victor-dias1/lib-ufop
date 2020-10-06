@@ -51,17 +51,19 @@
 	</head>
 	<body>
 		<h1>Usuários</h1>
-		<div class="card-body">
-            <div class="table-responsive">
-				<table id="listar-usuario" class="display" align="margin-right">
-            		<thead>
-                		<tr>
-                    		<th>Nome</th>
-                    		<th>Sobrenome</th>
-                    		<th>Matrícula</th>
-                		</tr>
-					</thead>
-				</table>
+		<div class="col-lg-6">
+			<div class="card-body">
+            	<div class="table-responsive">
+					<table id="listar-usuario" class="display">
+            			<thead>
+                			<tr>
+                    			<th>Nome</th>
+                    			<th>Sobrenome</th>
+                    			<th>Matrícula</th>
+                			</tr>
+						</thead>
+					</table>
+			<	/div>
 			</div>
 		</div>
 		<nav class="side-navbar">
