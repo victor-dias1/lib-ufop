@@ -51,23 +51,23 @@
 	</head>
 	<body>
 		<h1>Usuários</h1>
-		<div class="row justify-content-center">
 			<div class="col-lg-10">
 				<div class="card-body">
-            		<div class="table-responsive">
-						<table id="listar-usuario" class="display">
-            				<thead>
-                				<tr>
-                    				<th>Nome</th>
-                    				<th>Sobrenome</th>
-                    				<th>Matrícula</th>
-                				</tr>
-							</thead>
-						</table>
+					<div class="card-header d-flex align-items-center">
+            			<div class="table-responsive">
+							<table id="listar-usuario" class="display">
+            					<thead>
+                					<tr>
+                    					<th>Nome</th>
+                    					<th>Sobrenome</th>
+                    					<th>Matrícula</th>
+                					</tr>
+								</thead>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		<nav class="side-navbar">
       		<div class="side-navbar-wrapper">
         		<!-- Sidebar Header    -->
