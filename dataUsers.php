@@ -52,21 +52,21 @@
 	<body>
 		<h1>Usuários</h1>
 		<div class="col-lg-8">
-		<div class="col align-self-center">
-			<div class="card-body">
-            	<div class="table-responsive">
-					<table id="listar-usuario" class="display">
-            			<thead>
-                			<tr>
-                    			<th>Nome</th>
-                    			<th>Sobrenome</th>
-                    			<th>Matrícula</th>
-                			</tr>
-						</thead>
-					</table>
+			<div class="col align-self-center">
+				<div class="card-body">
+            		<div class="table-responsive">
+						<table id="listar-usuario" class="display">
+            				<thead>
+                				<tr>
+                    				<th>Nome</th>
+                    				<th>Sobrenome</th>
+                    				<th>Matrícula</th>
+                				</tr>
+							</thead>
+						</table>
+					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 		<nav class="side-navbar">
       		<div class="side-navbar-wrapper">
