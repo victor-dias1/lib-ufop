@@ -52,7 +52,7 @@
 	<body>
 		<h1>Usuários</h1>
 		<div class="container">	
-			<div class="row justify-content-center">">
+			<div class="row justify-content-center">
 				<div class="col-lg-14">
             		<div class="table-responsive">
 						<table id="listar-usuario" class="display">
