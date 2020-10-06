@@ -51,7 +51,7 @@
 	</head>
 	<body>
 		<h1>Usuários</h1>
-		<div class="col-lg-6">
+		<div class="col-lg-8">
 			<div class="card-body">
             	<div class="table-responsive">
 					<table id="listar-usuario" class="display">
