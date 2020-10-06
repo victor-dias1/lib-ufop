@@ -51,8 +51,8 @@
 	</head>
 	<body>
 		<h1>Usuários</h1>
-		<div class="col-lg-8">
-			<div class="col align-self-center">
+		<div class="row justify-content-center">
+			<div class="col-lg-10">
 				<div class="card-body">
             		<div class="table-responsive">
 						<table id="listar-usuario" class="display">
