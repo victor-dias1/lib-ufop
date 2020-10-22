@@ -19,11 +19,10 @@ $qnt_linhas = pg_num_rows($resultado_user);
 
 //Obter os dados a serem apresentados
 $result_usuarios = "SELECT pnome, unome, matricula FROM usuarios WHERE 1=1";
-if( !empty($requestData['search']['value']) ) {   // se houver um parâmetro de pesquisa, $requestData['search']['value'] contém o parâmetro de pesquisa
-	$result_usuarios.=" AND ( pnome LIKE '".$requestData['search']['value']."%' ";    
-	$result_usuarios.=" OR unome LIKE '".$requestData['search']['value']."%' ";
-	$result_usuarios.=" OR matricula LIKE '".$requestData['search']['value']."%' )";
-}
+// if( !empty($requestData['search']['value']) ) // se houver um parâmetro de pesquisa, $requestData['search']['value'] contém o parâmetro de pesquisa
+$result_usuarios.=" AND ( pnome LIKE '".$requestData['search']['value']."%' ";    
+$result_usuarios.=" OR unome LIKE '".$requestData['search']['value']."%' ";
+$result_usuarios.=" OR matricula LIKE '".$requestData['search']['value']."%' )";
 
 $resultado_usuarios=pg_query($conexao, $result_usuarios);
 $totalFiltered = pg_num_rows($resultado_usuarios);

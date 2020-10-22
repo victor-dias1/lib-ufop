@@ -20,11 +20,11 @@ $qnt_linhas = pg_num_rows($resultado_user);
 
 //Obter os dados a serem apresentados
 $result_usuarios = "SELECT id_livros, nome, autor, edicao FROM livros WHERE 1=1";
-if( !empty($requestData['search']['value']) ) {   // se houver um parâmetro de pesquisa, $requestData['search']['value'] contém o parâmetro de pesquisa
-	$result_usuarios.=" AND ( nome LIKE '".$requestData['search']['value']."%' ";    
-	$result_usuarios.=" OR salario LIKE '".$requestData['search']['value']."%' ";
-	$result_usuarios.=" OR idade LIKE '".$requestData['search']['value']."%' )";
-}
+//if( !empty($requestData['search']['value']) ) // se houver um parâmetro de pesquisa, $requestData['search']['value'] contém o parâmetro de pesquisa
+$result_usuarios.=" AND ( nome LIKE '".$requestData['search']['value']."%' ";    
+$result_usuarios.=" OR salario LIKE '".$requestData['search']['value']."%' ";
+$result_usuarios.=" OR idade LIKE '".$requestData['search']['value']."%' )";
+
 
 $resultado_usuarios=pg_query($conexao, $result_usuarios);
 $totalFiltered = pg_num_rows($resultado_usuarios);
