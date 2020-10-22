@@ -18,7 +18,14 @@
   		<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 		<script>
 		$(document).ready(function() {
-			$('#listar-usuario').DataTable({			
+			$('#listar-usuario').DataTable({	
+				"language": {
+					"lengthMenu": "Mostrando _MENU_ registros por página",
+					"zeroRecords": "Nada encontrado",
+					"info": "Mostrando página _PAGE_ of _PAGES_",
+					"infoEmpty": "Nenhum registro disponível",
+					"infoFiltered": "(filtrado de _MAX_ registros no total)"
+				},		
 				"processing": true,
 				"serverSide": true,
 				"ajax": {

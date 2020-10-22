@@ -19,6 +19,13 @@ if (!isset($_SESSION['cpf'])) {
 	<script>
 		$(document).ready(function() {
 			$('#listar-livros').DataTable({
+				"language": {
+					"lengthMenu": "Mostrando _MENU_ registros por página",
+					"zeroRecords": "Nada encontrado",
+					"info": "Mostrando página _PAGE_ of _PAGES_",
+					"infoEmpty": "Nenhum registro disponível",
+					"infoFiltered": "(filtrado de _MAX_ registros no total)"
+				},
 				"processing": true,
 				"serverSide": true,
 				"ajax": {
@@ -94,4 +101,5 @@ if (!isset($_SESSION['cpf'])) {
 			</div>
 		</nav>
 </body>
+
 </html>
