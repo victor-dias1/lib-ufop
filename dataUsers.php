@@ -23,13 +23,13 @@ if (!isset($_SESSION['cpf'])) {
 			$('#listar-usuario').DataTable({
 				columnDefs: [{
 					targets: [0],
-					orderData: [0, 1]
+					orderData: [0, 1, 2]
 				}, {
 					targets: [1],
-					orderData: [1, 0]
+					orderData: [0, 1, 2]
 				}, {
 					targets: [2],
-					orderData: [2, 0]
+					orderData: [0, 1, 2]
 				}],
 				"language": {
 					"lengthMenu": "Mostrando _MENU_ registros por página",
