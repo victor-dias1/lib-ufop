@@ -14,6 +14,8 @@ if (!isset($_SESSION['cpf'])) {
 	<title>Biblioteca</title>
 	<link rel="stylesheet" href="https://getbootstrap.com/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
+    <script src="https//code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 	<script>
