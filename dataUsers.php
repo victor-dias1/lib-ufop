@@ -21,16 +21,6 @@ if (!isset($_SESSION['cpf'])) {
 	<script>
 		$(document).ready(function() {
 			$('#listar-usuario').DataTable({
-				columnDefs: [{
-					targets: [0],
-					orderData: [0, 1, 2]
-				}, {
-					targets: [1],
-					orderData: [0, 1, 2]
-				}, {
-					targets: [2],
-					orderData: [0, 1, 2]
-				}],
 				"language": {
 					"lengthMenu": "Mostrando _MENU_ registros por página",
 					"zeroRecords": "Nada encontrado",
@@ -38,13 +28,13 @@ if (!isset($_SESSION['cpf'])) {
 					"infoEmpty": "Nenhum registro disponível",
 					"infoFiltered": "(filtrado de _MAX_ registros no total)"
 				},
-
 				"processing": true,
 				"serverSide": true,
-				"ajax": {
-					"url": "processDataUsers.php",
-					"type": "POST"
-				}
+				"ajax": "scripts/server_processing.php"
+				//"ajax": {
+				//	"url": "processDataUsers.php",
+				//	"type": "POST"
+				//}
 			});
 		});
 	</script>
