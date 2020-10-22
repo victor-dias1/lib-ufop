@@ -30,11 +30,11 @@ if (!isset($_SESSION['cpf'])) {
 				},
 				"processing": true,
 				"serverSide": true,
-				"ajax": "scripts/server_processing.php"
-				//"ajax": {
-				//	"url": "processDataUsers.php",
-				//	"type": "POST"
-				//}
+				"ajax": {
+					"script": "scripts/server_processing.php",
+					"url": "processDataUsers.php",
+					"type": "POST"
+				}
 			});
 		});
 	</script>
