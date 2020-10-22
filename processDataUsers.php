@@ -5,7 +5,6 @@ include_once("conexao.php");
 //Receber a requisão da pesquisa 
 $requestData= $_REQUEST;
 
-
 //Indice da coluna na tabela visualizar resultado => nome da coluna no banco de dados
 $columns = array( 
 	array ( '0' =>'pnome'), 
@@ -20,18 +19,9 @@ $qnt_linhas = pg_num_rows($resultado_user);
 
 //Obter os dados a serem apresentados
 $result_usuarios = "SELECT pnome, unome, matricula FROM usuarios WHERE 1=1";
-if( !empty($requestData['search']['value']) ) {   // se houver um parâmetro de pesquisa, $requestData['search']['value'] contém o parâmetro de pesquisa
-	$result_usuarios.=" AND ( pnome LIKE '".$requestData['search']['value']."%' ";    
-	$result_usuarios.=" OR unome LIKE '".$requestData['search']['value']."%' ";
-	$result_usuarios.=" OR matricula LIKE '".$requestData['search']['value']."%' )";
-}
 
 $resultado_usuarios=pg_query($conexao, $result_usuarios);
 $totalFiltered = pg_num_rows($resultado_usuarios);
-
-//Ordenar o resultado
-$result_usuarios.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."  LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
-$resultado_usuarios = pg_query($conexao, $result_usuarios);
 
 // Ler e criar o array de dados
 $dados = array();
