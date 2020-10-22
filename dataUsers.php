@@ -31,8 +31,7 @@ if (!isset($_SESSION['cpf'])) {
 				"processing": true,
 				"serverSide": true,
 				"ajax": {
-					"url": "scripts/server_processing.php",
-					//"url": "processDataUsers.php",
+					"url": "processDataUsers.php",
 					"type": "POST"
 				}
 			});
