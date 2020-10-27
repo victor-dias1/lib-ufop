@@ -77,7 +77,7 @@ if (!isset($_SESSION['cpf'])) {
 					</table>
 				</div>
 			</div>
-			<a class="btn btn-primary" href="processaLivro.php" role="button">Cadastrar Livro</a>
+			<a class="btn btn-primary" href="forms.php" role="button">Cadastrar Livro</a>
 		</div>
 		<?php
                 if(isset($_SESSION['msg']))

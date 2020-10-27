@@ -61,9 +61,9 @@
                 <input type="submit" name="btnLogin" value="Fazer login" class="btn btn-primary" id="login">
               </div>
             </form>
-            <a href="#" class="forgot-pass">Esqueceu a senha?</a>
+            <!--<a href="#" class="forgot-pass">Esqueceu a senha?</a>
             <small>Não tem uma conta? </small>
-            <a href="register.php" class="signup">Crie aqui!</a>
+            <a href="register.php" class="signup">Crie aqui!</a>-->
           </div>
           <div class="copyrights text-center">
             <p>Design by <a href="https://bootstrapious.com/p/bootstrap-4-dashboard" class="external">Bootstrapious</a></p>
