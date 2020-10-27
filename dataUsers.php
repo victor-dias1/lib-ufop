@@ -79,14 +79,14 @@ if (!isset($_SESSION['cpf'])) {
 				</div>
 			</div>
 			<a class="btn btn-primary" href="register.php" role="button">Cadastrar Usuário</a>
-			<?php
+		</div>
+		<?php
                 if(isset($_SESSION['msg']))
                 {
                     echo $_SESSION['msg'];
                     unset($_SESSION['msg']);
                 }
-            ?>
-		</div>
+        ?>
 	</div>
 	<nav class="side-navbar">
 		<div class="side-navbar-wrapper">

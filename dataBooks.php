@@ -77,8 +77,15 @@ if (!isset($_SESSION['cpf'])) {
 					</table>
 				</div>
 			</div>
-			<a class="btn btn-primary" href="emprestimo.php" role="button">Cadastrar Empréstimo</a>
+			<a class="btn btn-primary" href="processaLivro.php" role="button">Cadastrar Livro</a>
 		</div>
+		<?php
+                if(isset($_SESSION['msg']))
+                {
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                }
+        ?>
 		<nav class="side-navbar">
 			<div class="side-navbar-wrapper">
 				<!-- Sidebar Header    -->
