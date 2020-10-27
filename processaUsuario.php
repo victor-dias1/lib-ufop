@@ -19,8 +19,8 @@
 
     if($result_query){
         $_SESSION['msg'] = "<p style='color:green;'>Usuário Cadastrado com sucesso!</p>";
-        header("Location: index.php");
+        header("Location: dataUsers.php");
     }else{
         $_SESSION['msg'] = "<p style='color:red;'>Erro ao cadastrar usuário!</p>";
-        header("Location: index.php");
+        header("Location: dataUsers.php");
     }
