@@ -77,6 +77,7 @@ if (!isset($_SESSION['cpf'])) {
 					</table>
 				</div>
 			</div>
+			<a class="btn btn-primary" href="emprestimo.php" role="button">Cadastrar Empréstimo</a>
 		</div>
 		<nav class="side-navbar">
 			<div class="side-navbar-wrapper">
