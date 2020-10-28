@@ -22,6 +22,9 @@ if (!isset($_SESSION['cpf'])) {
 		function abrir(){
 			document.getElementById('popUp').style.display = 'block';
 		}
+		function fechar(){
+			document.getElementById('popUp').style.display = 'none';
+		}
 
 	</script>	
 	<script>
@@ -100,7 +103,7 @@ if (!isset($_SESSION['cpf'])) {
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-primary">Save changes</button>
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<a class="btn btn-danger" href="javascript: fechar();" role="button" data-dismiss="modal">Close</a>
 						</div>
 					</div>
 				</div>
