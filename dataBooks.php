@@ -86,6 +86,8 @@ if (!isset($_SESSION['cpf'])) {
 					</table>
 				</div>
 			</div>
+		</div>
+		<div class="float-right">
 			<a class="btn btn-primary" href="forms.php" role="button">Cadastrar Livro</a>
 			<a class="btn btn-danger" href="javascript: abrir();" role="button">Deletar Livro</a>
 			<div id="popUp" class="modal" tabindex="-1" role="dialog">
@@ -122,7 +124,8 @@ if (!isset($_SESSION['cpf'])) {
                 echo $_SESSION['msg'];
                 unset($_SESSION['msg']);
             }
-        ?>
+		?>
+	</div>
 		<nav class="side-navbar">
 			<div class="side-navbar-wrapper">
 				<!-- Sidebar Header    -->
