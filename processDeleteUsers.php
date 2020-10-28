@@ -13,5 +13,3 @@
         $_SESSION['msg'] = "<p style='color:red;'> Erro ao deletar usuário!</p>";
         header("dataUsers.php");
     }
-
-?>
