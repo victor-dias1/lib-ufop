@@ -141,12 +141,19 @@ if (!isset($_SESSION['cpf'])) {
 			<!-- Sidebar Navigation Menus-->
 			<div class="main-menu">
 				<h5 class="sidenav-heading">Menu</h5>
-				<ul id="side-main-menu" class="side-menu list-unstyled">
-					<li><a href="main.php"> <i class="icon-home"></i>Página Inicial </a></li>
-					<li><a href="dataUsers.php"> <i class="icon-form"></i>Usuários </a></li>
-					<li><a href="dataBooks.php"> <i class="icon-form"></i>Livros </a></li>
+				<ul id="side-main-menu" class="side-menu list-unstyled">                  
+					<li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
+					<li><a href="dataUsers.php"> <i class="icon-form"></i>Usuários                                             </a></li>
+					<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Livros</a>
+					<ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+						<li><a href="dataBooks.php">Gerência</a></li>
+						<li><a href="emprestimo.php">Empréstimos</a></li>
+						<li><a href="#">Renovações</a></li>
+						<li><a href="#">Reservas</a></li>
+					</ul>
+					</li>
 				</ul>
-			</div>
+        	</div>
 		</div>
 	</nav>
 </body>
