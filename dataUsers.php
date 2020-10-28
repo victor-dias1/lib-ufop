@@ -88,7 +88,7 @@ if (!isset($_SESSION['cpf'])) {
 				</div>
 			</div>		
 		</div>
-		<div class="navbar-right">
+		<div class="navbar-left">
 				<a class="btn btn-primary" href="register.php" role="button">Cadastrar Usuário</a>
 				<a class="btn btn-danger" href="javascript: abrir();" role="button">Deletar Usuário</a>
 			<div id="popUp" class="modal" tabindex="-1" role="dialog">
