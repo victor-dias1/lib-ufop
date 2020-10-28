@@ -57,6 +57,13 @@
             <li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
             <li><a href="dataUsers.php"> <i class="icon-form"></i>Usuários                                             </a></li>
             <li><a href="dataBooks.php"> <i class="icon-form"></i>Livros                                               </a></li>
+            <li><a href="dataBooks.php" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Livros </a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
