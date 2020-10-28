@@ -8,8 +8,8 @@
 
     if(pg_affected_rows($conexao)){
         $_SESSION['msg'] = "<p style='color:green;'> Usuário deletado com sucesso!</p>";
-        header("dataUsers.php");
+        header("Location: dataUsers.php");
     }else{
         $_SESSION['msg'] = "<p style='color:red;'> Erro ao deletar usuário!</p>";
-        header("dataUsers.php");
+        header("Location: dataUsers.php");
     }
