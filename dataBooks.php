@@ -16,6 +16,15 @@ if (!isset($_SESSION['cpf'])) {
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+		function abrir(){
+			document.getElementById('popUp').style.display = 'block';
+		}
+		function fechar(){
+			document.getElementById('popUp').style.display = 'none';
+		}
+
+	</script>	
 	<script>
 		$(document).ready(function() {
 			$('#listar-livros').DataTable({
@@ -78,13 +87,41 @@ if (!isset($_SESSION['cpf'])) {
 				</div>
 			</div>
 			<a class="btn btn-primary" href="forms.php" role="button">Cadastrar Livro</a>
+			<a class="btn btn-danger" href="javascript: abrir();" role="button">Deletar Livro</a>
+			<div id="popUp" class="modal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Modal title</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>Id do Livro</p>
+							<form method="POST" action="processDeleteBooks.php">
+								<p><input type="text" name="id">
+								<p><input type="submit" value="Excluir" class="btn btn-danger" role="button"></p>
+							</form>	
+						</div>
+						<div class="modal-footer">
+							<a class="btn btn-primary" href="javascript: fechar();" role="button">Cancelar</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php
+				if (isset($_SESSION['msg'])) {
+					echo $_SESSION['msg'];
+					unset($_SESSION['msg']);
+				}
+			?>
 		</div>
 		<?php
-                if(isset($_SESSION['msg']))
-                {
-                    echo $_SESSION['msg'];
-                    unset($_SESSION['msg']);
-                }
+            if(isset($_SESSION['msg'])){
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
+            }
         ?>
 		<nav class="side-navbar">
 			<div class="side-navbar-wrapper">
