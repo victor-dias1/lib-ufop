@@ -2,7 +2,7 @@
     session_start();
     include_once("conexao.php");
 
-    $matricula = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+    $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
     $result_livro = "DELETE FROM livros WHERE id_livros = '$id'";
     $resultado_livro = pg_query($conexao, $result_livro);
 
