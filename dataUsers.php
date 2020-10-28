@@ -99,11 +99,15 @@ if (!isset($_SESSION['cpf'])) {
 							</button>
 						</div>
 						<div class="modal-body">
-							<p>Modal body text goes here.</p>
+							<p>Matrícula</p>
+							<form method="POST" action="processDeleteUsers.php">
+								<p><input type="text" name="matricula">
+								<p><a class="btn-primary" href="javascript: fechar();" role="button" data-dismiss="modal">Excluir</a></p>
+							</form>	
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Save changes</button>
-							<a class="btn btn-danger" href="javascript: fechar();" role="button" data-dismiss="modal">Close</a>
+							<a class="btn-primary" href="javascript: fechar();" role="button" data-dismiss="modal">Excluir</a>
+							<a class="btn btn-danger" href="javascript: fechar();" role="button" data-dismiss="modal">Cancelar</a>
 						</div>
 					</div>
 				</div>
