@@ -6,7 +6,7 @@
     $result_usuario = "DELETE FROM usuarios WHERE matricula = '$matricula'";
     $resultado_usuario = pg_query($conexao, $result_usuario);
 
-    if(pg_affected_rows($conexao)){
+    if($resultado_usuario){
         $_SESSION['msg'] = "<p style='color:green;'> Usuário deletado com sucesso!</p>";
         header("Location: dataUsers.php");
     }else{
