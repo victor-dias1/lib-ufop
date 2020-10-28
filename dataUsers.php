@@ -73,12 +73,14 @@ if (!isset($_SESSION['cpf'])) {
 								<th>Nome</th>
 								<th>Sobrenome</th>
 								<th>Matrícula</th>
+								<a class="btn btn-primary" href="processDeleteUsers.php?matricula=". $row role="button">Deletar Usuário</a>
 							</tr>
 						</thead>
 					</table>
 				</div>
 			</div>
 			<a class="btn btn-primary" href="register.php" role="button">Cadastrar Usuário</a>
+			
 		</div>
 		<?php
                 if(isset($_SESSION['msg']))
