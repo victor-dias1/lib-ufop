@@ -111,7 +111,12 @@ if (!isset($_SESSION['cpf'])) {
 					</div>
 				</div>
 			</div>
-
+			<?php
+				if (isset($_SESSION['msg'])) {
+					echo $_SESSION['msg'];
+					unset($_SESSION['msg']);
+				}
+			?>
 		</div>
 		<?php
 		if (isset($_SESSION['msg'])) {
