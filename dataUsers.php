@@ -73,7 +73,7 @@ if (!isset($_SESSION['cpf'])) {
 								<th>Nome</th>
 								<th>Sobrenome</th>
 								<th>Matrícula</th>
-								<a class="btn btn-primary" href="processDeleteUsers.php?matricula=". $row role="button">Deletar Usuário</a>
+								<th><a class="btn btn-danger" href="processDeleteUsers.php?matricula=" role="button">Deletar Usuário</a></th>
 							</tr>
 						</thead>
 					</table>
