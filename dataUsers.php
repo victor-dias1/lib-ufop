@@ -18,6 +18,12 @@ if (!isset($_SESSION['cpf'])) {
 	<script src="https//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+		function abrir(){
+			document.getElementById('popUp').style.display = 'block';
+		}
+
+	</script>	
 	<script>
 		$(document).ready(function() {
 			$('#listar-usuario').DataTable({
@@ -80,7 +86,7 @@ if (!isset($_SESSION['cpf'])) {
 			</div>
 			<a class="btn btn-primary" href="register.php" role="button">Cadastrar Usuário</a>
 			<a class="btn btn-danger" href="processDeleteUsers.php?matricula=" role="button">Deletar Usuário</a>
-			<div class="modal" tabindex="-1" role="dialog">
+			<div id="popUp" class="modal" tabindex="-1" role="dialog">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
