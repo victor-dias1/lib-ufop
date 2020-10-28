@@ -102,7 +102,7 @@ if (!isset($_SESSION['cpf'])) {
 							<p>Matrícula</p>
 							<form method="POST" action="processDeleteUsers.php">
 								<p><input type="text" name="matricula">
-								<a class="btn-primary" href="javascript: fechar();" role="button" data-dismiss="modal">Excluir</a>
+								<p><a class="btn-primary" type="submit" role="button" data-dismiss="modal">Excluir</a></p>
 							</form>	
 						</div>
 						<div class="modal-footer">
