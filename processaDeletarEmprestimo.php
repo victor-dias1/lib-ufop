@@ -7,9 +7,9 @@
     $resultado_livro = pg_query($conexao, $result_livro);
 
     if($resultado_livro){
-        $_SESSION['msg'] = "<p style='color:green;'> Livro deletado com sucesso!</p>";
+        $_SESSION['msg'] = "<p style='color:green;'> Empréstimo deletado com sucesso!</p>";
         header("Location: gerenciaEmprestimos.php");
     }else{
-        $_SESSION['msg'] = "<p style='color:red;'> Erro ao deletar livro!</p>";
+        $_SESSION['msg'] = "<p style='color:red;'> Erro ao deletar empréstimo!</p>";
         header("Location: gerenciaEmprestimos.php");
     }
