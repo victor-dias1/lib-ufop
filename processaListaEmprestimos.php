@@ -7,19 +7,19 @@ $requestData= $_REQUEST;
 
 //Indice da coluna na tabela visualizar resultado => nome da coluna no banco de dados
 $columns = array( 
-	'0' =>'id_livros', 
-	'1' => 'nome',
-	'2' => 'autor',
-	'3' => 'edicao'
+	'0' =>'ematricula', 
+	'1' => 'ecodigoexemplar',
+	'2' => 'dataemprestimo',
+	'3' => 'dataentrega'
 );
 
 //Obtendo registros de número total sem qualquer pesquisa
-$result_user = "SELECT id_livros, nome, autor, edicao FROM livros";
+$result_user = "SELECT ematricula, ecodigoexemplar, dataemprestimo, dataentrega FROM emprestimos";
 $resultado_user = pg_query($conexao, $result_user);
 $qnt_linhas = pg_num_rows($resultado_user);
 
 //Obter os dados a serem apresentados
-$result_usuarios = "SELECT id_livros, nome, autor, edicao FROM livros WHERE 1=1";
+$result_usuarios = "SELECT ematricula, ecodigoexemplar, dataemprestimo, dataentrega FROM emprestimos WHERE 1=1";
 
 $resultado_usuarios=pg_query($conexao, $result_usuarios);
 $totalFiltered = pg_num_rows($resultado_usuarios);
@@ -28,10 +28,10 @@ $totalFiltered = pg_num_rows($resultado_usuarios);
 $dados = array();
 while( $row_usuarios = pg_fetch_array($resultado_usuarios) ) {  
 	$dado = array(); 
-	$dado[] = $row_usuarios["id_livros"];
-	$dado[] = $row_usuarios["nome"];
-	$dado[] = $row_usuarios["autor"];	
-	$dado[] = $row_usuarios["edicao"];
+	$dado[] = $row_usuarios["ematricula"];
+	$dado[] = $row_usuarios["ecodigoexemplar"];
+	$dado[] = $row_usuarios["dataemprestimo"];	
+	$dado[] = $row_usuarios["dataentrega"];
 	$dados[] = $dado;
 }
 

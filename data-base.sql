@@ -93,7 +93,7 @@ CREATE TABLE emprestimos
 	dataemprestimo	DATE		    	NOT NULL,
 	dataentrega		DATE    			NOT NULL,
 	
-	PRIMARY KEY (ematricula, eisbn, ecodigoexemplar),
+	PRIMARY KEY (ematricula, ecodigoexemplar),
 	FOREIGN KEY (ematricula) REFERENCES usuarios (matricula)
 	    ON UPDATE CASCADE
 		ON DELETE CASCADE,

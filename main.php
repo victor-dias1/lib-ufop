@@ -60,7 +60,7 @@
           <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
             <li><a href="gerenciaLivros.php">Gerência</a></li>
             <li><a href="gerenciaEmprestimos.php">Empréstimos</a></li>
-            <li><a href="gerenciaReservas">Reservas</a></li>
+            <li><a href="gerenciaReservas.php">Reservas</a></li>
           </ul>
           </li>
         </ul>
