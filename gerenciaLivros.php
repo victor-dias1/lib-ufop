@@ -72,7 +72,7 @@
 		<h1>Livros</h1>
 		<div class="container-fluid">
 			<div class="row justify-content-center">
-				<div class="col-12">
+				<div class="col-8">
 					<div class="table-responsive">
 						<table id="listar-livros" class="display" style="width:100%">
 							<thead>
