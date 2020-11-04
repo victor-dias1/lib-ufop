@@ -8,8 +8,8 @@
 
     if($resultado_livro){
         $_SESSION['msg'] = "<p style='color:green;'> Livro deletado com sucesso!</p>";
-        header("Location: dataBooks.php");
+        header("Location: gerenciaLivros.php");
     }else{
         $_SESSION['msg'] = "<p style='color:red;'> Erro ao deletar livro!</p>";
-        header("Location: dataBooks.php");
+        header("Location: gerenciaLivros.php");
     }

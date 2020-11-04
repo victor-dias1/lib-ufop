@@ -3,12 +3,11 @@
 session_start();
 if (!isset($_SESSION['cpf'])) {
 	$_SESSION['msg'] = 'Faça o Login para continuar!';
-	header("Location: index.php");
+	header("Location: login.php");
 }
 ?>
 
 <html lang="pt-br">
-
 <head>
 	<meta charset="utf-8">
 	<title>Biblioteca</title>
@@ -40,7 +39,7 @@ if (!isset($_SESSION['cpf'])) {
 				"processing": true,
 				"serverSide": true,
 				"ajax": {
-					"url": "processDataUsers.php",
+					"url": "processaListaUsuarios.php",
 					"type": "POST"
 				}
 			});
@@ -89,7 +88,7 @@ if (!isset($_SESSION['cpf'])) {
 			</div>
 		</div>
 		<div class="float-right">
-			<a class="btn btn-primary" href="register.php" role="button">Cadastrar Usuário</a>
+			<a class="btn btn-primary" href="cadastraNovoUsuario.php" role="button">Cadastrar Usuário</a>
 			<a class="btn btn-danger" href="javascript: abrir();" role="button">Deletar Usuário</a>
 			<div id="popUp" class="modal" tabindex="-1" role="dialog">
 				<div class="modal-dialog" role="document">
@@ -102,7 +101,7 @@ if (!isset($_SESSION['cpf'])) {
 						</div>
 						<div class="modal-body">
 							<p>Matrícula</p>
-							<form method="POST" action="processDeleteUsers.php">
+							<form method="POST" action="processaDeletarUsuario.php">
 								<p><input type="text" name="matricula">
 									<p><input type="submit" value="Excluir" class="btn btn-danger" role="button"></p>
 							</form>
@@ -128,35 +127,33 @@ if (!isset($_SESSION['cpf'])) {
 		?>
 	</div>
 	<!-- Side Navbar -->
-    <nav class="side-navbar">
-      <div class="side-navbar-wrapper">
-        <!-- Sidebar Header    -->
-        <div class="sidenav-header d-flex align-items-center justify-content-center">
-          <!-- User Info-->
-          <div class="sidenav-header-inner text-center"><img src="img/avatar-7.jpeg" alt="person" class="img-fluid rounded-circle">
-            <h2 class="h5">Victor Dias</h2><span>Web Developer</span>
-          </div>
-          <!-- Small Brand information, appears on minimized sidebar-->
-          <div class="sidenav-header-logo"><a href="main.php" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
-        </div>
-        <!-- Sidebar Navigation Menus-->
-        <div class="main-menu">
-          <h5 class="sidenav-heading">Menu</h5>
-          <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
-            <li><a href="dataUsers.php"> <i class="icon-form"></i>Usuários                                             </a></li>
-            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Livros</a>
-              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                <li><a href="dataBooks.php">Gerência</a></li>
-                <li><a href="emprestimo.php">Empréstimos</a></li>
-                <li><a href="#">Renovações</a></li>
-                <li><a href="#">Reservas</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+	<nav class="side-navbar">
+		<div class="side-navbar-wrapper">
+			<!-- Sidebar Header    -->
+			<div class="sidenav-header d-flex align-items-center justify-content-center">
+			<!-- User Info-->
+			<div class="sidenav-header-inner text-center"><img src="img/avatar-7.jpeg" alt="person" class="img-fluid rounded-circle">
+				<h2 class="h5">Victor Dias</h2><span>Web Developer</span>
+			</div>
+			<!-- Small Brand information, appears on minimized sidebar-->
+			<div class="sidenav-header-logo"><a href="main.php" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
+			</div>
+			<!-- Sidebar Navigation Menus-->
+			<div class="main-menu">
+			<h5 class="sidenav-heading">Menu</h5>
+			<ul id="side-main-menu" class="side-menu list-unstyled">                  
+				<li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
+				<li><a href="gerenciaUsuarios.php"> <i class="icon-form"></i>Usuários                                             </a></li>
+				<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Livros</a>
+				<ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+					<li><a href="gerenciaLivros.php">Gerência</a></li>
+					<li><a href="gerenciaEmprestimos.php">Empréstimos</a></li>
+					<li><a href="gerenciaReservas">Reservas</a></li>
+				</ul>
+				</li>
+			</ul>
+			</div>
+		</div>
+	</nav>
 </body>
-
 </html>

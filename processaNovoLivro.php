@@ -18,8 +18,8 @@
 
     if($result_query){
         $_SESSION['msg'] = "<p style='color:green;'>Livro Cadastrado com sucesso!</p>";
-        header("Location: dataBooks.php");
+        header("Location: gerenciaLivros.php");
     }else{
         $_SESSION['msg'] = "<p style='color:red;'>Erro ao cadastrar Livro!</p>";
-        header("Location: dataBooks.php");
+        header("Location: gerenciaLivros.php");
     }

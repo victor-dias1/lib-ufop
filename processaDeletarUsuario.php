@@ -8,8 +8,8 @@
 
     if($resultado_usuario){
         $_SESSION['msg'] = "<p style='color:green;'> Usuário deletado com sucesso!</p>";
-        header("Location: dataUsers.php");
+        header("Location: gerenciaUsuarios.php");
     }else{
         $_SESSION['msg'] = "<p style='color:red;'> Erro ao deletar usuário!</p>";
-        header("Location: dataUsers.php");
+        header("Location: gerenciaUsuarios.php");
     }

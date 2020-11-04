@@ -23,13 +23,13 @@
                     $_SESSION['email'] = $row_usuario['email'];
                 }else{
                     $_SESSION['msg'] = "Usuário ou Senha incorretos!";
-                    header("Location: index.php");
+                    header("Location: login.php");
                 }  
             }
         }
     }else{
         $_SESSION['msg'] = "Página não encontrada";
-        header("Location: index.php");
+        header("Location: login.php");
     }
 ?>
 
