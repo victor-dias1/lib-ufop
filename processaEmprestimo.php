@@ -12,8 +12,8 @@
     
     if($result_query){
         $_SESSION['msg'] = "<p style='color:green;'>Empréstimo realizado com sucesso!</p>";
-        header("Location: dataBooks.php");
+        header("Location: emprestimo.php");
     }else{
         $_SESSION['msg'] = "<p style='color:red;'>Erro ao realizar empréstimo!</p>";
-        header("Location: dataBooks.php");
+        header("Location: emprestimo.php");
     }
