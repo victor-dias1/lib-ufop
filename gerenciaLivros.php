@@ -70,7 +70,7 @@
 
 	<body>
 		<h1>Livros</h1>
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row justify-content-center">
 				<div class="col-12">
 					<div class="table-responsive">
@@ -151,13 +151,6 @@
 							<li><a href="gerenciaReservas.php">Reservas</a></li>
 						</ul>
 					</li>
-					<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
-              			<ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                			<li><a href="#">Page</a></li>
-                			<li><a href="#">Page</a></li>
-                			<li><a href="#">Page</a></li>
-              			</ul>
-            		</li>
 				</ul>
 				</div>
 			</div>
