@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
     session_start();
+    include_once("header.php");
     if(!isset($_SESSION['cpf']))
     {
       $_SESSION['msg'] = 'Faça o Login para continuar!';
@@ -8,11 +9,7 @@
     }
 ?>
 <html>
-  <head>
-    <?php
-      include_once("header.php");
-    ?>
-    
+  <head> 
     <title>Biblioteca</title>
     <!--<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
