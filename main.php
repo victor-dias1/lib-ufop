@@ -4,7 +4,7 @@
     if(!isset($_SESSION['cpf']))
     {
       $_SESSION['msg'] = 'Faça o Login para continuar!';
-      header("Location: login.php");
+      header("Location: index.php");
     }
 ?>
 <html>
