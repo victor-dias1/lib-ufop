@@ -144,17 +144,7 @@
 				<ul id="side-main-menu" class="side-menu list-unstyled">                  
 					<li><a href="main.php"> <i class="icon-home"></i>Página Inicial                                            </a></li>
 					<li><a href="gerenciaUsuarios.php"> <i class="icon-form"></i>Usuários                                             </a></li>
-					<li><div class="dropdown">
-						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Livros
-						</a>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="gerenciaLivros.php">Gerência</a>
-							<a class="dropdown-item" href="gerenciaEmprestimos.php">Empréstimo</a>
-							<a class="dropdown-item" href="gerenciaReservas.php">Reservas</a>
-						</div>
-						</div></li>
-					<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Livros</a>
+					<li><a href="exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Livros</a>
 					<ul id="exampledropdownDropdown" class="collapse list-unstyled ">
 						<li><a href="gerenciaLivros.php">Gerência</a></li>
 						<li><a href="gerenciaEmprestimos.php">Empréstimos</a></li>
