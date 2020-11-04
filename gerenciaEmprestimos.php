@@ -102,7 +102,7 @@
 							<div class="modal-body">
 								<p>Código do Exemplar</p>
 								<form method="POST" action="processaDeletarEmprestimo.php">
-									<p><input type="text" name="id">
+									<p><input type="text" name="codExemplar">
 										<p><input type="submit" value="Excluir" class="btn btn-danger" role="button"></p>
 								</form>
 							</div>
