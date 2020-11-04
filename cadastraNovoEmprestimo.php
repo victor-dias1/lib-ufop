@@ -116,7 +116,7 @@
                 </div>
                 <div class="card-body">
                   <p>Lorem ipsum dolor sit amet consectetur.</p>
-                  <form method="POST" action="processaEmprestimo.php">
+                  <form method="POST" action="processaNovoEmprestimo.php">
                     <div class="form-group">
                       <label>Matrícula</label>
                       <input type="text" class="form-control" name="matricula">
