@@ -44,7 +44,7 @@
         <!-- Sidebar Header    -->
         <div class="sidenav-header d-flex align-items-center justify-content-center">
         <!-- User Info-->
-        <div class="sidenav-header-inner text-center"><img src="img/avatar-7.jpeg" alt="person" class="img-fluid rounded-circle">
+        <div class="sidenav-header-inner text-center"><img src="img/avatar-7.png" alt="person" class="img-fluid rounded-circle">
           <h2 class="h5">João</h2><span>Bibliotecário</span>
         </div>
         <!-- Small Brand information, appears on minimized sidebar-->
