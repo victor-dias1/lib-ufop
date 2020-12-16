@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
-$result_usuario = "SELECT * FROM usuarios";
-$row_usuario_usuario = pg_query($conexao, $result_usuario);
+    include_once("conexao.php");
+    $result_usuario = "SELECT * FROM usuarios";
+    $row_usuario_usuario = pg_query($conexao, $result_usuario);
 ?>
 <html lang="pt-br">
 
@@ -14,6 +15,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <script defer src="js/fontawesome-all.min.js"></script>
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -41,15 +43,6 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <div class="d-flex">
         <nav class="sidebar">
             <ul class="list-unstyled">
-                <!-- <li>
-                        <a href="#submenu1" data-toggle="collapse">
-                            <i class="fas fa-user"></i> Usuário
-                        </a>
-                        <ul id="submenu1" class="list-unstyled collapse">
-                            <li><a href="listar.html"><i class="fas fa-users"></i> Usuários</a></li>
-                            <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso</a></li>
-                        </ul>
-                    </li> -->
                 <li>
                     <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Gerência</a>
                     <ul id="submenu2" class="list-unstyled collapse">
@@ -103,215 +96,6 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                         <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
                                     </td>
                                 </tr>
-                                <!-- Inicio Modal Visualizar-->
-                                <div class="modal fade" id="modalVisualizar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title text-center" id="myModalLabel">Dados do Usuário</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <dl class="row">
-                                                    <dt class="col-sm-3">Matrícula:</dt>
-                                                    <dd class="col-sm-9"><?php echo $row_usuario['matricula']; ?></dd>
-
-                                                    <dt class="col-sm-3">Nome:</dt>
-                                                    <dd class="col-sm-9"><?php echo $row_usuario['pnome']; ?></dd>
-
-                                                    <dt class="col-sm-3">Sobrenome:</dt>
-                                                    <dd class="col-sm-9"><?php echo $row_usuario['unome']; ?></dd>
-
-                                                    <dt class="col-sm-3">E-mail:</dt>
-                                                    <dd class="col-sm-9"><?php echo $row_usuario['email']; ?></dd>
-                                                </dl>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a class="btn btn-outline-warning" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalEditar<?php echo $row_usuario['matricula']; ?>">Editar</a>
-                                                <a class="btn btn-outline-danger" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Fim Modal Visualizar-->
-
-                                <!-- Inicio Modal Apagar-->
-                                <div class="modal fade" id="modalApagar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title text-center" id="myModalLabel">Deletar Usuário</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <blockquote class="blockquote">
-                                                    <p class="mb-0">Tem certeza que deseja excluir '<?php echo $row_usuario['pnome']; ?>' do seu Banco de Dados?</p>
-                                                </blockquote>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a class="btn btn-outline-danger" href='../processa/deleta_usuario.php?id=<?php echo $row_usuario['matricula']; ?>' role="button">Excluir</a>
-                                                <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Fim Modal Apagar-->
-
-                                <!-- Inicio Modal Editar-->
-                                <div class="modal fade" id="modalEditar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog">
-                                    <div class="modal-dialog modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Editar usuário</h5>
-                                                <button type="button" class="close" data-dismiss="modal">
-                                                    <span>&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form method="POST" action="../processa/edita_usuario.php">
-                                                    <div class="form-group row">
-                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">CPF:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="inputEmail3" name="cpf" value="<?php echo $row_usuario['cpf'] ?>" pattern="[0-9]{11}" required maxlength="11" minlength="11">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Nome:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="inputPassword3" name="pnome" value="<?php echo $row_usuario['pnome'] ?>" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Sobrenome:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="inputEmail3" name="unome" value="<?php echo $row_usuario['unome'] ?>" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Matrícula:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="inputPassword3" name="matricula" value="<?php echo $row_usuario['matricula'] ?>" required maxlength="30">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="email" class="form-control" id="inputEmail3" name="email" value="<?php echo $row_usuario['email'] ?>" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Senha:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="password" class="form-control" id="inputPassword3" name="senha" value="<?php echo $row_usuario['senha'] ?>" required maxlength="20" minlength="4">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Tipo de Usuário:</label>
-                                                        <div class="col-sm-10">
-                                                            <select class="form-control" name="tipo" required>
-                                                                <option>Selecione</option>
-                                                                <option value="1" <?php
-                                                                                    if ($row_usuario['tipo_usuario'] == 1) {
-                                                                                        echo 'selected';
-                                                                                    }
-                                                                                    ?>>Administrador</option>
-                                                                <option value="0" <?php
-                                                                                    if ($row_usuario['tipo_usuario'] == 0) {
-                                                                                        echo 'selected';
-                                                                                    }
-                                                                                    ?>>Aluno</option>
-                                                                <option value="2" <?php
-                                                                                    if ($row_usuario['tipo_usuario'] == 2) {
-                                                                                        echo 'selected';
-                                                                                    }
-                                                                                    ?>>Professor</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <input type="hidden" name="id" value="<?php echo $row_usuario['matricula']; ?>">
-                                                    <div class="form-group row">
-                                                        <div class="col-sm-10">
-                                                            <button type="submit" class="btn btn-outline-success">Salvar</button>
-                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Fim Modal Editar-->
-
-                                <!-- Inicio Modal Cadastrar-->
-                                <div class="modal fade" id="modalCadastrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog modal-lg" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title text-center" id="myModalLabel">Cadastrar Usuário</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form method="POST" action="../processa/novo_usuario.php">
-                                                    <div class="form-group row">
-                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">CPF:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="inputEmail3" name="cpf" pattern="[0-9]{11}" required maxlength="11" minlength="11">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Nome:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="inputPassword3" name="pnome" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Sobrenome:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="inputEmail3" name="unome" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Matrícula:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="text" class="form-control" id="inputPassword3" name="matricula" required maxlength="30">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="email" class="form-control" id="inputEmail3" name="email" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Senha:</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="password" class="form-control" id="inputPassword3" name="senha" required maxlength="20" minlength="4">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="inputPassword3" class="col-sm-2 col-form-label" required>Tipo de Usuário:</label>
-                                                        <div class="col-sm-10">
-                                                            <select class="form-control" name="tipo">
-                                                                <option selected>Selecione</option>
-                                                                <option value="1">Administrador</option>
-                                                                <option value="2">Professor</option>
-                                                                <option value="0">Aluno</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <div class="col-sm-10">
-                                                            <button type="submit" class="btn btn-outline-success">Cadastrar</button>
-                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Fim Modal Cadastrar-->
                             <?php
                             }
                             ?>
@@ -346,6 +130,18 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#listaUsuarios').DataTable({
+                "pagingType": "full_numbers",
+                language: {
+                    url: "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
+                },
+            });
+        });
+    </script>
 </body>
 
 </html>
