@@ -10,16 +10,16 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Reservas</title>
+    <title>Usuários</title>
 
-    <link rel="icon" href="imagem/favicon.ico">
+    <!-- <link rel="icon" href="imagem/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
 
-    <script defer src="js/fontawesome-all.min.js"></script>
+    <script defer src="js/fontawesome-all.min.js"></script> -->
 </head>
 
 <body>
@@ -131,12 +131,12 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     </div>
 
     <!-- <script src="js/jquery-3.2.1.slim.min.js"></script> -->
-    <script src="js/popper.min.js"></script>
+    <!-- <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script> -->
     <script>
         $(document).ready(function() {
             $('#table_id').DataTable();

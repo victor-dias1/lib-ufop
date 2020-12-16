@@ -2,18 +2,51 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Celke</title>
     <link rel="icon" href="imagem/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script defer src="js/fontawesome-all.min.js"></script>
     <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/dashboard.css"> -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Reservas</title>
+
+    <link rel="icon" href="imagem/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+    <script defer src="js/fontawesome-all.min.js"></script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
+    <?php
+    include_once('menu_admin.php');
+
+    $link = $_GET["link"];
+
+    $pages[1] = "bem_vindo.php";
+    $pages[2] = "gerenciaUsuarios.php";
+
+    if (!empty($link)) {
+        if (file_exists($pages[$link])) {
+            include $pages[$link];
+        } else {
+            include "bem_vindo.php";
+        }
+    } else {
+        include "bem_vindo.php";
+    }
+    ?>
+    <!-- <nav class="navbar navbar-expand navbar-dark bg-primary">
         <a class="sidebar-toggle text-light mr-3">
             <span class="navbar-toggler-icon"></span>
         </a>
@@ -37,15 +70,7 @@
     <div class="d-flex">
         <nav class="sidebar">
             <ul class="list-unstyled">
-                <!-- <li>
-                        <a href="#submenu1" data-toggle="collapse">
-                            <i class="fas fa-user"></i> Usuário
-                        </a>
-                        <ul id="submenu1" class="list-unstyled collapse">
-                            <li><a href="listar.html"><i class="fas fa-users"></i> Usuários</a></li>
-                            <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso</a></li>
-                        </ul>
-                    </li> -->
+                
                 <li>
                     <a href="#submenu2" data-toggle="collapse"> Gerência</a>
                     <ul id="submenu2" class="list-unstyled collapse">
@@ -107,12 +132,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
 </body>
 
 </html>
