@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/jquery.dataTables.min.css">
-    <script src="jquery-3.5.1.js"></script>
-    <script src="jquery.dataTables.min.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#listaUsuarios').DataTable({
