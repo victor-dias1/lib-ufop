@@ -36,7 +36,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#listaUsuarios').DataTable({
+            $('#listaUsuarios').dataTable({
                 "pagingType": "full_numbers",
                 language: {
                     url: "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
