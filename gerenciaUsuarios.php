@@ -15,10 +15,33 @@
     <script defer src="js/fontawesome-all.min.js"></script>
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+
+    <!-- Datatables CSS library -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+
+    <!-- Bootstrap Core -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    <!-- Datatables Bootstrap library-->
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.min.css">
+
+    <!-- DataTables Bootstrap 4 integration -->
+    <script src="js/dataTables.bootstrap4.min.js"> </script>
+
+    <!-- JQuery library -->
+    <script src="js/jquery-3.5.1.js"></script>
+
+    <!-- Datatables JS library -->
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+
     <script>
         $(document).ready(function() {
-            $('#listaUsuarios').DataTable();
+            $('#listaUsuarios').DataTable({
+                "pagingType": "full_numbers",
+                language: {
+                    url: "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
+                },
+            });
         });
     </script>
 </head>
@@ -135,8 +158,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
-    <script src="js/jquery-3.5.1.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-</body>
+    </body>
 
 </html>
