@@ -10,15 +10,6 @@
     <script defer src="js/fontawesome-all.min.js"></script>
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" language="javascript">
-        $(document).ready(function() {
-            $('#listaUsuarios').DataTable();
-        });
-    </script>
 </head>
 
 <body>

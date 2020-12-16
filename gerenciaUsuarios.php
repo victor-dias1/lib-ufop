@@ -16,12 +16,32 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" language="javascript">
+    <!-- Datatables CSS library -->
+    <link rel="stylesheet" type="text/css" href="../css/jquery.datatables.min.css" />
+
+    <!-- Bootstrap Core -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+    <!-- DataTables Bootstrap 4 integration -->
+    <link rel="stylesheet" type="text/css" href="../css/dataTables.bootstrap4.min.css" />
+
+    <!-- Datatables Bootstrap library -->
+    <script src="../js/dataTables.bootstrap4.min.js"> </script>
+
+    <!-- JQuery library -->
+    <script src="../js/jquery-3.5.1.js"></script>
+
+    <!-- Datatables JS library -->
+    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+
+    <script>
         $(document).ready(function() {
-            $('#listaUsuarios').DataTable();
+            $('#listaUsuarios').DataTable({
+                "pagingType": "full_numbers",
+                language: {
+                    url: "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json"
+                },
+            });
         });
     </script>
 </head>
