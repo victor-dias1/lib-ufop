@@ -132,6 +132,14 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <script src="js/query.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#listaUsuarios').DataTable();
+        });
+    </script>
 </body>
 
 </html>
