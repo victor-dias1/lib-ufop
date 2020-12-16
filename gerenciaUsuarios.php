@@ -74,7 +74,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                     </a>
                 </div>
                 <div class="table-responsive">
-                    <table id="listaUsuarios" class="table table-striped table-bordered table-hover">
+                    <table id="table_id" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Matrícula</th>
@@ -133,11 +133,16 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
     <link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <script src="js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#listaUsuarios').DataTable();
+            $('#table_id').DataTable();
         });
     </script>
 </body>
