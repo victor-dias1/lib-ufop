@@ -25,6 +25,12 @@
 
     <script defer src="js/fontawesome-all.min.js"></script>
 
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
 </head>
 
 <body>
@@ -134,12 +140,6 @@
         </div>
     </div> -->
 
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/dashboard.js"></script>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap4.min.js"></script>
 </body>
 
 </html>
