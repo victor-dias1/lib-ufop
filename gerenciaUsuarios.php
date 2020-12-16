@@ -9,9 +9,9 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <title>Reservas</title>
-
+    
     <link rel="icon" href="imagem/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -128,23 +128,11 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
         </div>
     </div>
 
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
-
-    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#table_id').dataTable();
-        });
-    </script>
 </body>
 
 </html>
