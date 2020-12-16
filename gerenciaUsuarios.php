@@ -17,7 +17,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <link rel="stylesheet" href="css/dashboard.css">
 
     <!-- Datatables CSS library -->
-    <link rel="stylesheet" type="text/css" href="css/jquery.datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
 
     <!-- Bootstrap Core -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
