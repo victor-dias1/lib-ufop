@@ -1,41 +1,47 @@
 <!DOCTYPE html>
+<?php
+$result_usuario = "SELECT * FROM usuarios";
+$row_usuario_usuario = pg_query($conexao, $result_usuario);
+?>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
-        <title>Usuários</title>
-        <link rel="icon" href="imagem/favicon.ico">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script defer src="js/fontawesome-all.min.js"></script>
-        <link rel="stylesheet" href="css/fontawesome.min.css">
-        <link rel="stylesheet" href="css/dashboard.css">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand navbar-dark bg-primary">
-            <a class="sidebar-toggle text-light mr-3">
-                <span class="navbar-toggler-icon"></span>
-            </a>
-            <a class="navbar-brand" href="#">Celke</a>
 
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                            <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline">Usuário</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Perfil</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
-                        </div>
-                    </li>
-                </ul>                
-            </div>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Usuários</title>
+    <link rel="icon" href="imagem/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script defer src="js/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
 
-        <div class="d-flex">
-            <nav class="sidebar">
-                <ul class="list-unstyled">
-                    <li>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <a class="sidebar-toggle text-light mr-3">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+        <a class="navbar-brand" href="main.php">Biblioteca</a>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline">Usuário</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Meu Perfil</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="d-flex">
+        <nav class="sidebar">
+            <ul class="list-unstyled">
+                <!-- <li>
                         <a href="#submenu1" data-toggle="collapse">
                             <i class="fas fa-user"></i> Usuário
                         </a>
@@ -43,192 +49,303 @@
                             <li><a href="listar.html"><i class="fas fa-users"></i> Usuários</a></li>
                             <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Gerência</a>
-                        <ul id="submenu2" class="list-unstyled collapse">
-                            <li><a href="#"><i class="fas fa-file-alt"></i> Usuários</a></li>
-                            <li><a href="#"><i class="fab fa-elementor"></i> Livros</a></li>
-                        </ul>
+                    </li> -->
+                <li>
+                    <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Gerência</a>
+                    <ul id="submenu2" class="list-unstyled collapse">
+                        <li><a href="gerenciaUsuarios.php"><i class="fas fa-file-alt"></i> Usuários</a></li>
+                        <li><a href="gerenciaLivros.php"><i class="fab fa-elementor"></i> Livros</a></li>
+                    </ul>
 
-                    </li>
-                    <li><a href="#"> Empréstimos</a></li>
-                    <li><a href="#"> Reservas</a></li>
-                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
-                </ul>
-            </nav>
+                </li>
+                <li><a href="gerenciaEmprestimos.php"> Empréstimos</a></li>
+                <li><a href="gerenciaReservas.php"> Reservas</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav>
 
-            <div class="content p-1">
-                <div class="list-group-item">
-                    <div class="d-flex">
-                        <div class="mr-auto p-2">
-                            <h2 class="display-4 titulo">Listar Usuários</h2>
+        <div class="content p-1">
+            <div class="list-group-item">
+                <div class="d-flex">
+                    <div class="mr-auto p-2">
+                        <h2 class="display-4 titulo">Listar Usuários</h2>
+                    </div>
+                    <a href="cadastrar.html">
+                        <div class="p-2">
+                            <button class="btn btn-outline-success btn-sm">
+                                Cadastrar
+                            </button>
                         </div>
-                        <a href="cadastrar.html">
-                            <div class="p-2">
-                                <button class="btn btn-outline-success btn-sm">
-                                    Cadastrar
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="alert alert-success" role="alert">
-                        Usuário apagado com sucesso!
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="table-responsive">
-                        <!-- <table class="table table-striped table-hover table-bordered">
-                            <thead>
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table id="listaUsuarios" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Matrícula</th>
+                                <th>Nome</th>
+                                <th>Sobrenome</th>
+                                <th>E-mail</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while ($row_usuario = pg_fetch_assoc($row_usuario_usuario)) {
+                            ?>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th class="d-none d-sm-table-cell">E-mail</th>
-                                    <th class="d-none d-lg-table-cell">Data do Cadastro</th>
-                                    <th class="text-center">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Cesar</td>
-                                    <td class="d-none d-sm-table-cell">cesar@celke.com.br</td>
-                                    <td class="d-none d-lg-table-cell">05/12/1997 11:44:39</td>
-                                    <td class="text-center">
-                                        <span class="d-none d-md-block">
-                                            <a href="visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                            <a href="editar.html" class="btn btn-outline-warning btn-sm">Editar</a>
-                                            <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                        </span>
-                                        <div class="dropdown d-block d-md-none">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                <a class="dropdown-item" href="visualizar.html">Visualizar</a>
-                                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                            </div>
-                                        </div>
+                                    <th><?php echo $row_usuario['matricula']; ?></th>
+                                    <td><?php echo $row_usuario['pnome']; ?></td>
+                                    <td><?php echo $row_usuario['unome']; ?></td>
+                                    <td><?php echo $row_usuario['email']; ?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Kelly</td>
-                                    <td class="d-none d-sm-table-cell">kelly@celke.com.br</td>
-                                    <td class="d-none d-lg-table-cell">05/12/1997 11:44:40</td>
-                                    <td class="text-center">
-                                        <span class="d-none d-md-block">
-                                            <a href="visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                            <a href="editar.html" class="btn btn-outline-warning btn-sm">Editar</a>
-                                            <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                        </span>
-                                        <div class="dropdown d-block d-md-none">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                <a class="dropdown-item" href="visualizar.html">Visualizar</a>
-                                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
+                                <!-- Inicio Modal Visualizar-->
+                                <div class="modal fade" id="modalVisualizar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="myModalLabel">Dados do Usuário</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <dl class="row">
+                                                    <dt class="col-sm-3">Matrícula:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_usuario['matricula']; ?></dd>
+
+                                                    <dt class="col-sm-3">Nome:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_usuario['pnome']; ?></dd>
+
+                                                    <dt class="col-sm-3">Sobrenome:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_usuario['unome']; ?></dd>
+
+                                                    <dt class="col-sm-3">E-mail:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_usuario['email']; ?></dd>
+                                                </dl>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a class="btn btn-outline-warning" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalEditar<?php echo $row_usuario['matricula']; ?>">Editar</a>
+                                                <a class="btn btn-outline-danger" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                             </div>
                                         </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Jessica</td>
-                                    <td class="d-none d-sm-table-cell">jessica@celke.com.br</td>
-                                    <td class="d-none d-lg-table-cell">05/12/1997 11:44:41</td>
-                                    <td class="text-center">
-                                        <span class="d-none d-md-block">
-                                            <a href="visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                            <a href="editar.html" class="btn btn-outline-warning btn-sm">Editar</a>
-                                            <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                        </span>
-                                        <div class="dropdown d-block d-md-none">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                <a class="dropdown-item" href="visualizar.html">Visualizar</a>
-                                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
+                                    </div>
+                                </div>
+                                <!-- Fim Modal Visualizar-->
+
+                                <!-- Inicio Modal Apagar-->
+                                <div class="modal fade" id="modalApagar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="myModalLabel">Deletar Usuário</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <blockquote class="blockquote">
+                                                    <p class="mb-0">Tem certeza que deseja excluir '<?php echo $row_usuario['pnome']; ?>' do seu Banco de Dados?</p>
+                                                </blockquote>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a class="btn btn-outline-danger" href='../processa/deleta_usuario.php?id=<?php echo $row_usuario['matricula']; ?>' role="button">Excluir</a>
+                                                <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                             </div>
                                         </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Ana</td>
-                                    <td class="d-none d-sm-table-cell">ana@celke.com.br</td>
-                                    <td class="d-none d-lg-table-cell">05/12/1997 11:44:42</td>
-                                    <td class="text-center">
-                                        <span class="d-none d-md-block">
-                                            <a href="visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                            <a href="editar.html" class="btn btn-outline-warning btn-sm">Editar</a>
-                                            <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                        </span>
-                                        <div class="dropdown d-block d-md-none">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                <a class="dropdown-item" href="visualizar.html">Visualizar</a>
-                                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
+                                    </div>
+                                </div>
+                                <!-- Fim Modal Apagar-->
+
+                                <!-- Inicio Modal Editar-->
+                                <div class="modal fade" id="modalEditar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Editar usuário</h5>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <span>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST" action="../processa/edita_usuario.php">
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">CPF:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputEmail3" name="cpf" value="<?php echo $row_usuario['cpf'] ?>" pattern="[0-9]{11}" required maxlength="11" minlength="11">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Nome:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputPassword3" name="pnome" value="<?php echo $row_usuario['pnome'] ?>" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Sobrenome:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputEmail3" name="unome" value="<?php echo $row_usuario['unome'] ?>" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Matrícula:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputPassword3" name="matricula" value="<?php echo $row_usuario['matricula'] ?>" required maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="email" class="form-control" id="inputEmail3" name="email" value="<?php echo $row_usuario['email'] ?>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Senha:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="password" class="form-control" id="inputPassword3" name="senha" value="<?php echo $row_usuario['senha'] ?>" required maxlength="20" minlength="4">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Tipo de Usuário:</label>
+                                                        <div class="col-sm-10">
+                                                            <select class="form-control" name="tipo" required>
+                                                                <option>Selecione</option>
+                                                                <option value="1" <?php
+                                                                                    if ($row_usuario['tipo_usuario'] == 1) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                    ?>>Administrador</option>
+                                                                <option value="0" <?php
+                                                                                    if ($row_usuario['tipo_usuario'] == 0) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                    ?>>Aluno</option>
+                                                                <option value="2" <?php
+                                                                                    if ($row_usuario['tipo_usuario'] == 2) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                    ?>>Professor</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" name="id" value="<?php echo $row_usuario['matricula']; ?>">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-10">
+                                                            <button type="submit" class="btn btn-outline-success">Salvar</button>
+                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table> -->
-                        <!-- <nav aria-label="paginacao">
-                            <ul class="pagination pagination-sm justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Primeira</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Última</a>
-                                </li>
-                            </ul>
-                        </nav> -->
-                    </div>
+                                    </div>
+
+                                </div>
+                                <!-- Fim Modal Editar-->
+
+                                <!-- Inicio Modal Cadastrar-->
+                                <div class="modal fade" id="modalCadastrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="myModalLabel">Cadastrar Usuário</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST" action="../processa/novo_usuario.php">
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">CPF:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputEmail3" name="cpf" pattern="[0-9]{11}" required maxlength="11" minlength="11">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Nome:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputPassword3" name="pnome" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Sobrenome:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputEmail3" name="unome" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Matrícula:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputPassword3" name="matricula" required maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="email" class="form-control" id="inputEmail3" name="email" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Senha:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="password" class="form-control" id="inputPassword3" name="senha" required maxlength="20" minlength="4">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label" required>Tipo de Usuário:</label>
+                                                        <div class="col-sm-10">
+                                                            <select class="form-control" name="tipo">
+                                                                <option selected>Selecione</option>
+                                                                <option value="1">Administrador</option>
+                                                                <option value="2">Professor</option>
+                                                                <option value="0">Aluno</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-10">
+                                                            <button type="submit" class="btn btn-outline-success">Cadastrar</button>
+                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fim Modal Cadastrar-->
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistroLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header bg-danger text-white">
-                        <h5 class="modal-title" id="exampleModalLabel">EXCLUIR ITEM</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Tem certeza de que deseja excluir o item selecionado?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-danger">Apagar</button>
-                    </div>
+    <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">EXCLUIR ITEM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza de que deseja excluir o item selecionado?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Apagar</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="js/dashboard.js"></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
 </html>
