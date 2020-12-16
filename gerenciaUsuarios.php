@@ -17,22 +17,22 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <link rel="stylesheet" href="css/dashboard.css">
 
     <!-- Datatables CSS library -->
-    <link rel="stylesheet" type="text/css" href="../css/jquery.datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.datatables.min.css" />
 
     <!-- Bootstrap Core -->
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
     <!-- DataTables Bootstrap 4 integration -->
-    <link rel="stylesheet" type="text/css" href="../css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.min.css" />
 
     <!-- Datatables Bootstrap library -->
-    <script src="../js/dataTables.bootstrap4.min.js"> </script>
+    <script src="js/dataTables.bootstrap4.min.js"> </script>
 
     <!-- JQuery library -->
-    <script src="../js/jquery-3.5.1.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
 
     <!-- Datatables JS library -->
-    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 
     <script>
         $(document).ready(function() {
