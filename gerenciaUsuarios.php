@@ -142,7 +142,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <script src="js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#table_id').DataTable();
+            $('#table_id').dataTable();
         });
     </script>
 </body>
