@@ -37,6 +37,11 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
             $('#listaUsuarios').DataTable();
         });
     </script>
+    <script>
+        $('#modalVisualizar').on('shown.bs.modal', function() {
+            $('#meuInput').trigger('focus')
+        })
+    </script>
 </head>
 
 <body>
