@@ -12,29 +12,11 @@
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
-    echo $id;
-    echo "";
-    echo $cpf;
-    echo "";
-    echo $tipo;
-    echo "";
-    echo $pnome;
-    echo "";
-    echo $unome;
-    echo "";
-    echo $matricula;
-    echo "";
-    echo $email;
-    echo "";
-    echo $senha;
-    echo "";
-
-    $result_user = "UPDATE usuarios SET cpf='$cpf', tipo_usuario= '$tipo', pnome= '$pnome', unome= '$unome', matricula= '$matricula', email= '$email', senha= '$senha'
-                    WHERE matricula= '$id'";
+    $result_user = "UPDATE usuarios SET cpf= '$cpf', tipo_usuario= '$tipo', pnome= '$pnome', unome= '$unome', matricula= '$matricula', email= '$email', senha= '$senha'
+                        WHERE matricula= '$id'";
     $result_query = pg_query($conexao, $result_user);
-
-    echo pg_last_error($conexao);
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -44,25 +26,25 @@
 </head>
 
 <body>
-<!-- ?php
-    if($result_query){
-        echo"
-        <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-        https://lib-ufop.herokuapp.com/gerenciaUsuarios.php'>
-        <script type=\"text/javascript\">
-            alert(\"Usuário editado com Sucesso!\");
-        </script>
-        ";
-    }else{
-        echo"
-        <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-        https://lib-ufop.herokuapp.com/gerenciaUsuarios.php'>
-        <script type=\"text/javascript\">
-            alert(\"Erro ao editar usuário!\");
-        </script>
-        ";
-    }
-?> -->
+    <?php
+        if ($result_query) {
+            echo "
+            <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
+            https://lib-ufop.herokuapp.com/gerenciaUsuarios.php'>
+            <script type=\"text/javascript\">
+                alert(\"Usuário editado com Sucesso!\");
+            </script>
+            ";
+        } else {
+            echo "
+            <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
+            https://lib-ufop.herokuapp.com/gerenciaUsuarios.php'>
+            <script type=\"text/javascript\">
+                alert(\"Erro ao editar usuário!\");
+            </script>
+            ";
+        }
+    ?>
 </body>
 
 </html>
