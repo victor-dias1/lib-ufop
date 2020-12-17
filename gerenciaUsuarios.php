@@ -261,7 +261,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="id" value="<?php echo $row_usuario['matricula']; ?>">
+                                                <input type="hidden" name="idUsuario" value="<?php echo $row_usuario['matricula']; ?>">
                                                 <div class="form-group row">
                                                     <div class="col-sm-10">
                                                         <button type="submit" class="btn btn-outline-success">Salvar</button>

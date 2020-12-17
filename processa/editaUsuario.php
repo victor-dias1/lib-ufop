@@ -2,8 +2,8 @@
     session_start();
     include_once("conexao.php");
 
-    $id = filter_input(INPUT_POST, 'id');
-    
+    $id = filter_input(INPUT_POST, 'idUsuario');
+
     $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
     $tipo = filter_input(INPUT_POST, 'tipo');
     $pnome = filter_input(INPUT_POST, 'pnome', FILTER_SANITIZE_STRING);
@@ -22,7 +22,9 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
+
 <body>
 <?php
     if($result_query){
@@ -44,4 +46,5 @@
     }
 ?>
 </body>
+
 </html>
