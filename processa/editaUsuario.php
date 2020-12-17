@@ -16,6 +16,8 @@
     $result_user = "UPDATE usuarios SET cpf ='$cpf', tipo_usuario = '$tipo', pnome = '$pnome', unome = '$unome', 
                                         matricula = '$matricula', email = '$email', senha = '$senha' WHERE matricula = '$id'";
     $result_query = pg_query($conexao, $result_user);
+
+    $erro = pg_result_error ($result_query);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,6 +28,9 @@
 </head>
 
 <body>
+    <script>
+        console.log($erro)
+    </script>
 <?php
     if($result_query){
         echo"
