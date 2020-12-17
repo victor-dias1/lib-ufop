@@ -51,7 +51,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <main>
         <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
-            <div class="list-group-item">
+            <!-- <div class="list-group-item">
                 <div class="d-flex">
                     <div class="mr-auto p-2">
                         <h2 class="display-4 titulo">Gerenciar Usuários</h2>
@@ -63,7 +63,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                             </button>
                         </div>
                     </a>
-                </div>
+                </div> -->
                 <div class="table-responsive">
                     <table id="listaUsuarios" class="table table-striped table-bordered table-hover">
                         <thead>
@@ -212,7 +212,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                         </tbody>
                     </table>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
         </div>
     </main>
