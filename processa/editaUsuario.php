@@ -13,11 +13,13 @@
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
     
 
-    $result_user = "UPDATE usuarios SET cpf ='$cpf', tipo_usuario = '$tipo', pnome = '$pnome', unome = '$unome', 
-                                        matricula = '$matricula', email = '$email', senha = '$senha' WHERE matricula = '$id'";
+    $result_user = "UPDATE usuarios SET (cpf ='$cpf', tipo_usuario = '$tipo', pnome = '$pnome', unome = '$unome', 
+                                        matricula = '$matricula', email = '$email', senha = '$senha') 
+                    WHERE matricula = '$id'";
     $result_query = pg_query($conexao, $result_user);
 
     $erro = pg_result_error ($result_query);
+    echo $erro
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
