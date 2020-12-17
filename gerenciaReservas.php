@@ -1,72 +1,57 @@
+<?php
+include_once("conexao.php");
+$result_reservas = "SELECT * FROM reservas";
+$resultado_reservas = pg_query($conexao, $result_reservas);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Reservas</title>
+
+    <!-- CSS Template -->
     <link rel="icon" href="imagem/favicon.ico">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script defer src="js/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- JS Template -->
+    <script defer src="js/fontawesome-all.min.js"></script>
+
+    <!-- CSS dataTables -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+
+    <!-- JS and JQuery dataTables -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Scripts -->
+    <script>
+        $(document).ready(function() {
+            $('#listaReservas').DataTable();
+        });
+    </script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
-        <a class="sidebar-toggle text-light mr-3">
-            <span class="navbar-toggler-icon"></span>
-        </a>
-        <a class="navbar-brand" href="#">Celke</a>
 
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline">Usuário</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Perfil</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php include_once('includes/header.php'); ?>
 
-    <div class="d-flex">
-        <nav class="sidebar">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#submenu1" data-toggle="collapse">
-                        <i class="fas fa-user"></i> Usuário
-                    </a>
-                    <ul id="submenu1" class="list-unstyled collapse">
-                        <li><a href="listar.html"><i class="fas fa-users"></i> Usuários</a></li>
-                        <li><a href="#"><i class="fas fa-key"></i> Nível de Acesso</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Gerência</a>
-                    <ul id="submenu2" class="list-unstyled collapse">
-                        <li><a href="#"><i class="fas fa-file-alt"></i> Usuários</a></li>
-                        <li><a href="#"><i class="fab fa-elementor"></i> Livros</a></li>
-                    </ul>
-
-                </li>
-                <li><a href="#"> Empréstimos</a></li>
-                <li><a href="#"> Reservas</a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
-            </ul>
-        </nav>
-
+    <main>
+        <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
             <div class="list-group-item">
                 <div class="d-flex">
                     <div class="mr-auto p-2">
-                        <h2 class="display-4 titulo">Listar Usuários</h2>
+                        <h2 class="display-4 titulo">Reservas</h2>
                     </div>
-                    <a href="cadastrar.html">
+                    <a href="#">
                         <div class="p-2">
                             <button class="btn btn-outline-success btn-sm">
                                 Cadastrar
@@ -74,161 +59,41 @@
                         </div>
                     </a>
                 </div>
-                <div class="alert alert-success" role="alert">
-                    Usuário apagado com sucesso!
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="table-responsive">
-                    <!-- <table class="table table-striped table-hover table-bordered">
-                            <thead>
+                    <table id="listaReservas" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Matrícula</th>
+                                <th>Código do Exemplar</th>
+                                <th>Data da Reserva</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while ($row_reservas = pg_fetch_assoc($resultado_reservas)) {
+                            ?>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th class="d-none d-sm-table-cell">E-mail</th>
-                                    <th class="d-none d-lg-table-cell">Data do Cadastro</th>
-                                    <th class="text-center">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Cesar</td>
-                                    <td class="d-none d-sm-table-cell">cesar@celke.com.br</td>
-                                    <td class="d-none d-lg-table-cell">05/12/1997 11:44:39</td>
-                                    <td class="text-center">
-                                        <span class="d-none d-md-block">
-                                            <a href="visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                            <a href="editar.html" class="btn btn-outline-warning btn-sm">Editar</a>
-                                            <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                        </span>
-                                        <div class="dropdown d-block d-md-none">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                <a class="dropdown-item" href="visualizar.html">Visualizar</a>
-                                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                            </div>
-                                        </div>
+                                    <th><?php echo $row_reservas['rmatricula']; ?></th>
+                                    <td><?php echo $row_reservas['rcodigoexemplar']; ?></td>
+                                    <td><?php echo $row_reservas['rdata']; ?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_reservas['rcodigoexemplar']; ?>">Visualizar</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger">Apagar</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Kelly</td>
-                                    <td class="d-none d-sm-table-cell">kelly@celke.com.br</td>
-                                    <td class="d-none d-lg-table-cell">05/12/1997 11:44:40</td>
-                                    <td class="text-center">
-                                        <span class="d-none d-md-block">
-                                            <a href="visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                            <a href="editar.html" class="btn btn-outline-warning btn-sm">Editar</a>
-                                            <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                        </span>
-                                        <div class="dropdown d-block d-md-none">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                <a class="dropdown-item" href="visualizar.html">Visualizar</a>
-                                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Jessica</td>
-                                    <td class="d-none d-sm-table-cell">jessica@celke.com.br</td>
-                                    <td class="d-none d-lg-table-cell">05/12/1997 11:44:41</td>
-                                    <td class="text-center">
-                                        <span class="d-none d-md-block">
-                                            <a href="visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                            <a href="editar.html" class="btn btn-outline-warning btn-sm">Editar</a>
-                                            <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                        </span>
-                                        <div class="dropdown d-block d-md-none">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                <a class="dropdown-item" href="visualizar.html">Visualizar</a>
-                                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Ana</td>
-                                    <td class="d-none d-sm-table-cell">ana@celke.com.br</td>
-                                    <td class="d-none d-lg-table-cell">05/12/1997 11:44:42</td>
-                                    <td class="text-center">
-                                        <span class="d-none d-md-block">
-                                            <a href="visualizar.html" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                                            <a href="editar.html" class="btn btn-outline-warning btn-sm">Editar</a>
-                                            <a href="apagar.html" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                        </span>
-                                        <div class="dropdown d-block d-md-none">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
-                                                <a class="dropdown-item" href="visualizar.html">Visualizar</a>
-                                                <a class="dropdown-item" href="editar.html">Editar</a>
-                                                <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table> -->
-                    <!-- <nav aria-label="paginacao">
-                            <ul class="pagination pagination-sm justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Primeira</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Última</a>
-                                </li>
-                            </ul>
-                        </nav> -->
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistroLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">EXCLUIR ITEM</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Tem certeza de que deseja excluir o item selecionado?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Apagar</button>
-                </div>
-            </div>
         </div>
-    </div>
+    </main>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- JS Template -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>

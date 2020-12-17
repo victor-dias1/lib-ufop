@@ -17,7 +17,7 @@ $resultado_livro = pg_query($conexao, $result_livro);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Usuários</title>
+    <title>Livros</title>
 
     <!-- CSS Template -->
     <link rel="icon" href="imagem/favicon.ico">
