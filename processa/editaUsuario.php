@@ -11,15 +11,21 @@
     $matricula = filter_input(INPUT_POST, 'matricula', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
-    
+
+    echo $id;
+    echo $cpf;
+    echo $tipo;
+    echo $pnome;
+    echo $unome;
+    echo $matricula;
+    echo $email;
 
     $result_user = "UPDATE usuarios SET (cpf ='$cpf', tipo_usuario = '$tipo', pnome = '$pnome', unome = '$unome', 
                                         matricula = '$matricula', email = '$email', senha = '$senha') 
                     WHERE matricula = '$id'";
     $result_query = pg_query($conexao, $result_user);
 
-    $erro = pg_result_error ($result_query);
-    echo $erro
+    echo pg_last_error($conexao);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,7 +36,7 @@
 </head>
 
 <body>
-<?php
+<!-- ?php
     if($result_query){
         echo"
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
@@ -48,7 +54,7 @@
         </script>
         ";
     }
-?>
+?> -->
 </body>
 
 </html>
