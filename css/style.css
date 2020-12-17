@@ -54,8 +54,3 @@ body{
   .box input[type = "submit"]:hover{
     background: #2ecc71;
   }
-
-  .modal{
-    overflow: visible !important;
- }
-  

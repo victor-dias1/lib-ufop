@@ -18,7 +18,6 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="stylesheet" href="css/style.css">
 
     <!-- JS Template -->
     <script defer src="js/fontawesome-all.min.js"></script>
@@ -81,7 +80,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                     <td><?php echo $row_usuario['unome']; ?></td>
                                     <td><?php echo $row_usuario['email']; ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-toggle="static" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
                                         <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
                                     </td>
                                 </tr>
