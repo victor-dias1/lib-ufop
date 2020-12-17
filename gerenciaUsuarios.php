@@ -17,14 +17,21 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- dataTables -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
 
     <script defer src="js/fontawesome-all.min.js"></script>
 
+    <!-- JQuery -->
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
+
+    <!-- JS BootStrap 4 -->
     <script src="js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Scripts -->
     <script>
         $(document).ready(function() {
             $('#table_id').DataTable();
