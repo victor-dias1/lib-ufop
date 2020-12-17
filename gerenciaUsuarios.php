@@ -29,54 +29,53 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
 
     <main>
         <?php include_once('includes/sidebar.php'); ?>
-        <div class="d-flex" id="principal">
-            <div class="content p-1">
-                <div class="list-group-item">
-                    <div class="d-flex">
-                        <div class="mr-auto p-2">
-                            <h2 class="display-4 titulo">Listar Usuários</h2>
+        <div class="content p-1">
+            <div class="list-group-item">
+                <div class="d-flex">
+                    <div class="mr-auto p-2">
+                        <h2 class="display-4 titulo">Listar Usuários</h2>
+                    </div>
+                    <a href="cadastrar.html">
+                        <div class="p-2">
+                            <button class="btn btn-outline-success btn-sm">
+                                Cadastrar
+                            </button>
                         </div>
-                        <a href="cadastrar.html">
-                            <div class="p-2">
-                                <button class="btn btn-outline-success btn-sm">
-                                    Cadastrar
-                                </button>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="table-responsive">
-                        <table id="table_id" class="table table-striped table-bordered table-hover">
-                            <thead>
+                    </a>
+                </div>
+                <div class="table-responsive">
+                    <table id="table_id" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Matrícula</th>
+                                <th>Nome</th>
+                                <th>Sobrenome</th>
+                                <th>E-mail</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while ($row_usuario = pg_fetch_assoc($row_usuario_usuario)) {
+                            ?>
                                 <tr>
-                                    <th>Matrícula</th>
-                                    <th>Nome</th>
-                                    <th>Sobrenome</th>
-                                    <th>E-mail</th>
-                                    <th>Ações</th>
+                                    <th><?php echo $row_usuario['matricula']; ?></th>
+                                    <td><?php echo $row_usuario['pnome']; ?></td>
+                                    <td><?php echo $row_usuario['unome']; ?></td>
+                                    <td><?php echo $row_usuario['email']; ?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($row_usuario = pg_fetch_assoc($row_usuario_usuario)) {
-                                ?>
-                                    <tr>
-                                        <th><?php echo $row_usuario['matricula']; ?></th>
-                                        <td><?php echo $row_usuario['pnome']; ?></td>
-                                        <td><?php echo $row_usuario['unome']; ?></td>
-                                        <td><?php echo $row_usuario['email']; ?></td>
-                                        <td>
-                                            <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
-                                            <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
-                                        </td>
-                                    </tr>
-                                <?php
-                                }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+        </div>
         </div>
     </main>
 

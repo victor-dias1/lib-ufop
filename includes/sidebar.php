@@ -2,7 +2,7 @@
 
 ?>
 
-<div class="d-flex" id="principal">
+<div class="d-flex">
     <nav class="sidebar">
         <ul class="list-unstyled">
             <li>
@@ -27,4 +27,3 @@
             <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
         </ul>
     </nav>
-</div>
