@@ -18,6 +18,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- JS Template -->
     <script defer src="js/fontawesome-all.min.js"></script>
