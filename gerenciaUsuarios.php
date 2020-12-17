@@ -29,7 +29,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
 
     <main>
         <?php include_once('includes/sidebar.php'); ?>
-        <div class="d-flex">
+        <div class="d-flex" id="principal">
             <div class="content p-1">
                 <div class="list-group-item">
                     <div class="d-flex">

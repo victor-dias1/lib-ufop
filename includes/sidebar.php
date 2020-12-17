@@ -2,7 +2,7 @@
 
 ?>
 
-<div class="d-flex">
+<div class="d-flex" id="principal">
     <nav class="sidebar">
         <ul class="list-unstyled">
             <li>
