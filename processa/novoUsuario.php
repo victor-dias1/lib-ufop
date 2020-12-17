@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once("../conexao.php");
+    include_once("conexao.php");
 
     $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
     $tipo = filter_input(INPUT_POST, 'tipo');
@@ -28,7 +28,7 @@
     if ($result_query) {
         echo "
             <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-            https://lib-teste.herokuapp.com/gerenciaUsuarios.php'>
+            https://lib-ufop.herokuapp.com/gerenciaUsuarios.php'>
             <script type=\"text/javascript\">
                 alert(\"Usuário cadastrado com Sucesso!\");
             </script>
@@ -36,7 +36,7 @@
     } else {
         echo "
             <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-            https://lib-teste.herokuapp.com/gerenciaUsuarios.php'>
+            https://lib-ufop.herokuapp.com/gerenciaUsuarios.php'>
             <script type=\"text/javascript\">
                 alert(\"Erro ao cadastrar usuário!\");
             </script>
