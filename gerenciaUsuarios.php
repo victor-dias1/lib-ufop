@@ -27,47 +27,8 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
 
     <?php include_once('includes/header.php'); ?>
 
-    <?php include_once('includes/sidebar.php'); ?>
-
-    <!-- <nav class="navbar navbar-expand navbar-dark bg-primary">
-        <a class="sidebar-toggle text-light mr-3">
-            <span class="navbar-toggler-icon"></span>
-        </a>
-        <a class="navbar-brand" href="main.php">Biblioteca</a>
-
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline">Usuário</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Meu Perfil</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav> -->
-
-    <!-- <div class="d-flex">
-        <nav class="sidebar">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Gerência</a>
-                    <ul id="submenu2" class="list-unstyled collapse">
-                        <li><a href="gerenciaUsuarios.php"><i class="fas fa-file-alt"></i> Usuários</a></li>
-                        <li><a href="gerenciaLivros.php"><i class="fab fa-elementor"></i> Livros</a></li>
-                    </ul>
-
-                </li>
-                <li><a href="gerenciaEmprestimos.php"> Empréstimos</a></li>
-                <li><a href="gerenciaReservas.php"> Reservas</a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
-            </ul>
-        </nav> -->
-
-    
+    <main>
+        <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
             <div class="list-group-item">
                 <div class="d-flex">
@@ -115,9 +76,46 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                 </div>
             </div>
         </div>
-    
+    </main>
 
 
+    <!-- <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <a class="sidebar-toggle text-light mr-3">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+        <a class="navbar-brand" href="main.php">Biblioteca</a>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline">Usuário</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Meu Perfil</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <!-- <div class="d-flex">
+        <nav class="sidebar">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Gerência</a>
+                    <ul id="submenu2" class="list-unstyled collapse">
+                        <li><a href="gerenciaUsuarios.php"><i class="fas fa-file-alt"></i> Usuários</a></li>
+                        <li><a href="gerenciaLivros.php"><i class="fab fa-elementor"></i> Livros</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="gerenciaEmprestimos.php"> Empréstimos</a></li>
+                <li><a href="gerenciaReservas.php"> Reservas</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </nav> -->
 
     <!-- <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistroLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
