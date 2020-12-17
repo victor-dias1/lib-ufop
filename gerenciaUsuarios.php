@@ -115,6 +115,92 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                     </div>
                                 </div>
                                 <!-- Fim Modal Visualizar-->
+
+                                <!-- Inicio Modal Editar-->
+                                <div class="modal fade" id="modalEditar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Editar usuário</h5>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <span>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST" action="../processa/edita_usuario.php">
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">CPF:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputEmail3" name="cpf" value="<?php echo $row_usuario['cpf'] ?>" pattern="[0-9]{11}" required maxlength="11" minlength="11">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Nome:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputPassword3" name="pnome" value="<?php echo $row_usuario['pnome'] ?>" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Sobrenome:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputEmail3" name="unome" value="<?php echo $row_usuario['unome'] ?>" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Matrícula:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" id="inputPassword3" name="matricula" value="<?php echo $row_usuario['matricula'] ?>" required maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="email" class="form-control" id="inputEmail3" name="email" value="<?php echo $row_usuario['email'] ?>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Senha:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="password" class="form-control" id="inputPassword3" name="senha" value="<?php echo $row_usuario['senha'] ?>" required maxlength="20" minlength="4">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Tipo de Usuário:</label>
+                                                        <div class="col-sm-10">
+                                                            <select class="form-control" name="tipo" required>
+                                                                <option>Selecione</option>
+                                                                <option value="1" <?php
+                                                                                    if ($row_usuario['tipo_usuario'] == 1) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                    ?>>Administrador</option>
+                                                                <option value="0" <?php
+                                                                                    if ($row_usuario['tipo_usuario'] == 0) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                    ?>>Aluno</option>
+                                                                <option value="2" <?php
+                                                                                    if ($row_usuario['tipo_usuario'] == 2) {
+                                                                                        echo 'selected';
+                                                                                    }
+                                                                                    ?>>Professor</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" name="id" value="<?php echo $row_usuario['matricula']; ?>">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-10">
+                                                            <button type="submit" class="btn btn-outline-success">Salvar</button>
+                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Fim Modal Editar-->
                             <?php
                             }
                             ?>
