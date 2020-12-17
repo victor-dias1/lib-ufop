@@ -67,7 +67,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
             </ul>
         </nav> -->
 
-    <main>
+    
         <div class="content p-1">
             <div class="list-group-item">
                 <div class="d-flex">
@@ -115,7 +115,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                 </div>
             </div>
         </div>
-    </main>
+    
 
 
 
