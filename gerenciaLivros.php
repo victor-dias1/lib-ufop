@@ -1,7 +1,13 @@
 <?php
 include_once("conexao.php");
-$result_usuario = "SELECT * FROM usuarios";
-$row_usuario_usuario = pg_query($conexao, $result_usuario);
+
+$result_livro = "SELECT COUNT(exisbn), id_livros, nome, autor, edicao
+                FROM exemplares
+                INNER JOIN livros ON isbn = exisbn
+                WHERE emprestado = 0
+                GROUP BY exisbn, isbn, id_livros";
+
+$resultado_livro = pg_query($conexao, $result_livro);
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +40,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <!-- Scripts -->
     <script>
         $(document).ready(function() {
-            $('#listaUsuarios').DataTable();
+            $('#listaLivros').DataTable();
         });
     </script>
 </head>
@@ -60,28 +66,30 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                     </a>
                 </div>
                 <div class="table-responsive">
-                    <table id="listaUsuarios" class="table table-striped table-bordered table-hover">
+                    <table id="listaLivros" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Matrícula</th>
+                                <th>ID</th>
                                 <th>Nome</th>
-                                <th>Sobrenome</th>
-                                <th>E-mail</th>
+                                <th>Autor</th>
+                                <th>Edição</th>
+                                <th>Exemplares Disponíveis</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            while ($row_usuario = pg_fetch_assoc($row_usuario_usuario)) {
+                            while ($row_livros = pg_fetch_assoc($resultado_livro)) {
                             ?>
                                 <tr>
-                                    <th><?php echo $row_usuario['matricula']; ?></th>
-                                    <td><?php echo $row_usuario['pnome']; ?></td>
-                                    <td><?php echo $row_usuario['unome']; ?></td>
-                                    <td><?php echo $row_usuario['email']; ?></td>
+                                    <th><?php echo $row_livros['id_livros']; ?></th>
+                                    <td><?php echo $row_livros['nome']; ?></td>
+                                    <td><?php echo $row_livros['autor']; ?></td>
+                                    <td><?php echo $row_livros['edicao']; ?></td>
+                                    <td><?php echo $row_livros['count']; ?></td>
                                     <td>
-                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_livros['id_livros']; ?>">Visualizar</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger">Apagar</button>
                                     </td>
                                 </tr>
                             <?php
@@ -96,7 +104,6 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     </main>
 
     <!-- JS Template -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
