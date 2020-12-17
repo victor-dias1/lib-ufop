@@ -51,15 +51,15 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <main>
         <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
-            <div class="d-flex">
+            <div class="d-flex justify-content-center">
                 <div class="title">
                     <h1>Gerenciar Usuários</h1><br/>
                 </div>
+            </div>
+            <div class="d-flex justify-content-end">
                 <a href="#">
                     <div class="p-2">
-                        <button class="btn btn-outline-success btn-lg">
-                            Cadastrar
-                        </button>
+                        <button class="btn btn-outline-success btn-lg"> Cadastrar </button>
                     </div>
                 </a>
             </div>
