@@ -46,7 +46,6 @@ $resultado_livro = pg_query($conexao, $result_livro);
 </head>
 
 <body>
-
     <?php include_once('includes/header.php'); ?>
 
     <main>

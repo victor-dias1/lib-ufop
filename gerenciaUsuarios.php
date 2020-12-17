@@ -84,6 +84,37 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                         <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
                                     </td>
                                 </tr>
+                                <!-- Inicio Modal Visualizar-->
+                                <div class="modal fade" id="modalVisualizar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="myModalLabel">Dados do Usuário</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <dl class="row">
+                                                    <dt class="col-sm-3">Matrícula:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_usuario['matricula']; ?></dd>
+
+                                                    <dt class="col-sm-3">Nome:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_usuario['pnome']; ?></dd>
+
+                                                    <dt class="col-sm-3">Sobrenome:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_usuario['unome']; ?></dd>
+
+                                                    <dt class="col-sm-3">E-mail:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_usuario['email']; ?></dd>
+                                                </dl>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a class="btn btn-outline-warning" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalEditar<?php echo $row_usuario['matricula']; ?>">Editar</a>
+                                                <a class="btn btn-outline-danger" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fim Modal Visualizar-->
                             <?php
                             }
                             ?>
