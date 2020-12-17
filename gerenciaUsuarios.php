@@ -202,6 +202,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                         </div>
                                         <div class="modal-body">
                                             <form method="POST" action="processa/editaUsuario.php">
+                                                <input type="hidden" name="idUsuario" value="<?php echo $row_usuario['matricula']; ?>">
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">CPF:</label>
                                                     <div class="col-sm-10">
@@ -261,7 +262,6 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="idUsuario" value="<?php echo $row_usuario['matricula']; ?>">
                                                 <div class="form-group row">
                                                     <div class="col-sm-10">
                                                         <button type="submit" class="btn btn-outline-success">Salvar</button>
