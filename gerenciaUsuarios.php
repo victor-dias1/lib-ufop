@@ -52,17 +52,17 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
         <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
             <div class="d-flex">
-                <div class="mr-auto p-2">
-                    <h2 class="display-4 titulo">Gerenciar Usuários</h2>
+                <div class="title">
+                    <h1>Gerenciar Usuários</h1><br/>
                 </div>
                 <a href="#">
                     <div class="p-2">
-                        <button class="btn btn-outline-success btn-sm">
+                        <button class="btn btn-outline-success btn-lg">
                             Cadastrar
                         </button>
                     </div>
                 </a>
-            </div> -->
+            </div>
             <div class="table-responsive">
                 <table id="listaUsuarios" class="table table-striped table-bordered table-hover">
                     <thead>
