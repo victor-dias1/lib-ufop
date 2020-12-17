@@ -34,7 +34,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <!-- Scripts -->
     <script>
         $(document).ready(function() {
-            $('#table_id').DataTable();
+            $('#listaUsuarios').DataTable();
         });
     </script>
 </head>
@@ -49,9 +49,9 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
             <div class="list-group-item">
                 <div class="d-flex">
                     <div class="mr-auto p-2">
-                        <h2 class="display-4 titulo">Listar Usuários</h2>
+                        <h2 class="display-4 titulo">Gerenciar Usuários</h2>
                     </div>
-                    <a href="cadastrar.html">
+                    <a href="#">
                         <div class="p-2">
                             <button class="btn btn-outline-success btn-sm">
                                 Cadastrar
@@ -60,7 +60,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                     </a>
                 </div>
                 <div class="table-responsive">
-                    <table id="table_id" class="table table-striped table-bordered table-hover">
+                    <table id="listaUsuarios" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Matrícula</th>
@@ -95,67 +95,8 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
         </div>
     </main>
 
-
-    <!-- <nav class="navbar navbar-expand navbar-dark bg-primary">
-        <a class="sidebar-toggle text-light mr-3">
-            <span class="navbar-toggler-icon"></span>
-        </a>
-        <a class="navbar-brand" href="main.php">Biblioteca</a>
-
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline">Usuário</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Meu Perfil</a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav> -->
-
-    <!-- <div class="d-flex">
-        <nav class="sidebar">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#submenu2" data-toggle="collapse"><i class="fas fa-list-ul"></i> Gerência</a>
-                    <ul id="submenu2" class="list-unstyled collapse">
-                        <li><a href="gerenciaUsuarios.php"><i class="fas fa-file-alt"></i> Usuários</a></li>
-                        <li><a href="gerenciaLivros.php"><i class="fab fa-elementor"></i> Livros</a></li>
-                    </ul>
-
-                </li>
-                <li><a href="gerenciaEmprestimos.php"> Empréstimos</a></li>
-                <li><a href="gerenciaReservas.php"> Reservas</a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
-            </ul>
-        </nav> -->
-
-    <!-- <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistroLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="exampleModalLabel">EXCLUIR ITEM</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Tem certeza de que deseja excluir o item selecionado?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Apagar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- JS Template -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
