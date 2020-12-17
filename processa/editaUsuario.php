@@ -13,16 +13,24 @@
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
     echo $id;
+    echo "";
     echo $cpf;
+    echo "";
     echo $tipo;
+    echo "";
     echo $pnome;
+    echo "";
     echo $unome;
+    echo "";
     echo $matricula;
+    echo "";
     echo $email;
+    echo "";
+    echo $senha;
+    echo "";
 
-    $result_user = "UPDATE usuarios SET (cpf ='$cpf', tipo_usuario = '$tipo', pnome = '$pnome', unome = '$unome', 
-                                        matricula = '$matricula', email = '$email', senha = '$senha') 
-                    WHERE matricula = '$id'";
+    $result_user = "UPDATE usuarios SET cpf='$cpf', tipo_usuario= '$tipo', pnome= '$pnome', unome= '$unome', matricula= '$matricula', email= '$email', senha= '$senha'
+                    WHERE matricula= '$id'";
     $result_query = pg_query($conexao, $result_user);
 
     echo pg_last_error($conexao);
