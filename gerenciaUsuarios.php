@@ -138,8 +138,8 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
         </div>
     </div> -->
 
-    <script src="js/popper.min.js"></script>
-    <!-- <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script> -->
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
