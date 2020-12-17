@@ -53,13 +53,13 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
         <div class="content p-1">
             <div class="d-flex justify-content-center">
                 <div class="title">
-                    <h1>Gerenciar Usuários</h1><br/>
+                    <h1>Gerenciar Usuários</h1>
                 </div>
             </div>
             <div class="d-flex justify-content-end">
                 <a href="#">
                     <div class="p-2">
-                        <button class="btn btn-outline-success btn-lg"> Cadastrar </button>
+                        <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#modalCadastrar"> Cadastrar </button>
                     </div>
                 </a>
             </div>
@@ -84,10 +84,80 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                 <td><?php echo $row_usuario['unome']; ?></td>
                                 <td><?php echo $row_usuario['email']; ?></td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-focus="true" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
                                     <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
                                 </td>
                             </tr>
+                            <!-- Inicio Modal Cadastrar-->
+                            <div class="modal fade" id="modalCadastrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-center" id="myModalLabel">Cadastrar Usuário</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="POST" action="../processa/novo_usuario.php">
+                                                <div class="form-group row">
+                                                    <label for="inputEmail3" class="col-sm-2 col-form-label">CPF:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputEmail3" name="cpf" pattern="[0-9]{11}" required maxlength="11" minlength="11">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Nome:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputPassword3" name="pnome" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Sobrenome:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputEmail3" name="unome" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Matrícula:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputPassword3" name="matricula" required maxlength="30">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="email" class="form-control" id="inputEmail3" name="email" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Senha:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password" class="form-control" id="inputPassword3" name="senha" required maxlength="20" minlength="4">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3" class="col-sm-2 col-form-label" required>Tipo de Usuário:</label>
+                                                    <div class="col-sm-10">
+                                                        <select class="form-control" name="tipo">
+                                                            <option selected>Selecione</option>
+                                                            <option value="1">Administrador</option>
+                                                            <option value="2">Professor</option>
+                                                            <option value="0">Aluno</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="btn btn-outline-success">Cadastrar</button>
+                                                        <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fim Modal Cadastrar-->
+
                             <!-- Inicio Modal Visualizar-->
                             <div class="modal fade" id="modalVisualizar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                 <div class="modal-dialog" role="document">
@@ -205,6 +275,28 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
 
                             </div>
                             <!-- Fim Modal Editar-->
+
+                            <!-- Inicio Modal Apagar-->
+                            <div class="modal fade" id="modalApagar<?php echo $row_usuario['matricula']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-center" id="myModalLabel">Deletar Usuário</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <blockquote class="blockquote">
+                                                <p class="mb-0">Tem certeza que deseja excluir '<?php echo $row_usuario['pnome']; ?>' do seu Banco de Dados?</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a class="btn btn-outline-danger" href='../processa/deleta_usuario.php?id=<?php echo $row_usuario['matricula']; ?>' role="button">Excluir</a>
+                                            <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fim Modal Apagar-->
                         <?php
                         }
                         ?>
