@@ -13,23 +13,22 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
 
     <title>Usuários</title>
 
+    <!-- CSS Template -->
     <link rel="icon" href="imagem/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
 
-    <!-- dataTables -->
+    <!-- JS Template -->
+    <script defer src="js/fontawesome-all.min.js"></script>
+
+    <!-- CSS dataTables -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
 
-    <script defer src="js/fontawesome-all.min.js"></script>
-
-    <!-- JQuery -->
+    <!-- JS and JQuery dataTables -->
     <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
-
-    <!-- JS BootStrap 4 -->
     <script src="js/dataTables.bootstrap4.min.js"></script>
 
     <!-- Scripts -->
@@ -155,6 +154,11 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
         </div>
     </div> -->
 
+    <!-- JS Template -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 
 </html>
