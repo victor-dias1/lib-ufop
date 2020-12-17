@@ -1,16 +1,17 @@
-<!DOCTYPE html>
 <?php
 include_once("conexao.php");
 $result_usuario = "SELECT * FROM usuarios";
 $row_usuario_usuario = pg_query($conexao, $result_usuario);
 ?>
+
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Reservas</title>
+    <title>Usuários</title>
 
     <link rel="icon" href="imagem/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -20,17 +21,15 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
 
     <script defer src="js/fontawesome-all.min.js"></script>
-
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/dashboard.js"></script>
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap4.min.js"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
+
+    <?php include_once('includes/header.php'); ?>
+
+    <?php include_once('includes/sidebar.php'); ?>
+
+    <!-- <nav class="navbar navbar-expand navbar-dark bg-primary">
         <a class="sidebar-toggle text-light mr-3">
             <span class="navbar-toggler-icon"></span>
         </a>
@@ -49,9 +48,9 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
 
-    <div class="d-flex">
+    <!-- <div class="d-flex">
         <nav class="sidebar">
             <ul class="list-unstyled">
                 <li>
@@ -66,8 +65,9 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                 <li><a href="gerenciaReservas.php"> Reservas</a></li>
                 <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
             </ul>
-        </nav>
+        </nav> -->
 
+    <main>
         <div class="content p-1">
             <div class="list-group-item">
                 <div class="d-flex">
@@ -115,9 +115,11 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistroLabel" aria-hidden="true">
+
+
+    <!-- <div class="modal fade" id="apagarRegistro" tabindex="-1" role="dialog" aria-labelledby="apagarRegistroLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-danger text-white">
@@ -135,10 +137,14 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <!-- <script src="js/jquery-3.2.1.slim.min.js"></script> -->
-    
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#table_id').DataTable();

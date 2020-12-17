@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<HTML lang="pt-br">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -17,14 +17,14 @@
 </head>
 
 <body>
-    <?php include_once('includes/header.php');?>
+    <?php include_once('includes/header.php'); ?>
 
-    <?php include_once('includes/sidebar.php');?>
-    
+    <?php include_once('includes/sidebar.php'); ?>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 
-</HTML>
+</html>
