@@ -290,7 +290,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                             </blockquote>
                                         </div>
                                         <div class="modal-footer">
-                                            <a class="btn btn-outline-danger" href='../processa/deleta_usuario.php?id=<?php echo $row_usuario['matricula']; ?>' role="button">Excluir</a>
+                                            <a class="btn btn-outline-danger" href='processa/deletaUsuario.php?id=<?php echo $row_usuario['matricula']; ?>' role="button">Excluir</a>
                                             <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                         </div>
                                     </div>
