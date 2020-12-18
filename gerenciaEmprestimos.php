@@ -123,6 +123,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                             </dl>
                                         </div>
                                         <div class="modal-footer">
+                                            <a class="btn btn-outline-success" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalDevolverEmprestimo<?php echo $row_emprestimos['ecodigoexemplar']; ?>" role="button">Renovar</a>
                                             <a class="btn btn-outline-warning" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalRenovar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" role="button">Renovar</a>
                                             <a class="btn btn-outline-danger" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                         </div>
