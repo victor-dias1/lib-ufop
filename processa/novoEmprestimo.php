@@ -7,15 +7,8 @@
     $dataemprestimo = filter_input(INPUT_POST,'dataemprestimo');
     $dataentrega = filter_input(INPUT_POST,'dataentrega');
 
-    echo $ematricula;
-    echo $ecodigoexemplar;
-    echo $dataemprestimo;
-    echo $dataentrega;
-
     $result_user = "INSERT INTO emprestimos VALUES ('$ematricula', '$ecodigoexemplar', '$dataemprestimo', '$dataentrega')";
     $result_query = pg_query($conexao, $result_user);
-
-    echo pg_last_error($conexao);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,7 +19,7 @@
 </head>
 
 <body>
-<!-- ?php
+<?php
     if($result_query){
         echo"
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
@@ -44,6 +37,6 @@
         </script>
         ";
     }
-?> -->
+?>
 </body>
 </html>
