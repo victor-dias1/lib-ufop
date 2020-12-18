@@ -46,50 +46,163 @@ $resultado_reservas = pg_query($conexao, $result_reservas);
     <main>
         <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
-            <div class="list-group-item">
-                <div class="d-flex">
-                    <div class="mr-auto p-2">
-                        <h2 class="display-4 titulo">Reservas</h2>
-                    </div>
-                    <a href="#">
-                        <div class="p-2">
-                            <button class="btn btn-outline-success btn-sm">
-                                Cadastrar
-                            </button>
-                        </div>
-                    </a>
-                </div>
-                <div class="table-responsive">
-                    <table id="listaReservas" class="table table-striped table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>Matrícula</th>
-                                <th>Código do Exemplar</th>
-                                <th>Data da Reserva</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            while ($row_reservas = pg_fetch_assoc($resultado_reservas)) {
-                            ?>
-                                <tr>
-                                    <th><?php echo $row_reservas['rmatricula']; ?></th>
-                                    <td><?php echo $row_reservas['rcodigoexemplar']; ?></td>
-                                    <td><?php echo $row_reservas['rdata']; ?></td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_reservas['rcodigoexemplar']; ?>">Visualizar</button>
-                                        <button type="button" class="btn btn-sm btn-outline-danger">Apagar</button>
-                                    </td>
-                                </tr>
-                            <?php
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+            <div class="d-flex justify-content-center">
+                <div class="title">
+                    <h1>Reservas</h1>
                 </div>
             </div>
-        </div>
+            <div class="d-flex justify-content-end">
+                <a href="#">
+                    <div class="p-2">
+                        <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#modalCadastrar"> Reservar </button>
+                    </div>
+                </a>
+            </div>
+            <div class="table-responsive">
+                <table id="listaReservas" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Matrícula</th>
+                            <th>Código do Exemplar</th>
+                            <th>Data da Reserva</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        while ($row_reservas = pg_fetch_assoc($resultado_reservas)) {
+                        ?>
+                            <tr>
+                                <th><?php echo $row_reservas['rmatricula']; ?></th>
+                                <td><?php echo $row_reservas['rcodigoexemplar']; ?></td>
+                                <td><?php echo $row_reservas['rdata']; ?></td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_reservas['rcodigoexemplar']; ?>">Visualizar</button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger">Apagar</button>
+                                </td>
+                            </tr>
+                            <!-- Inicio Modal Visualizar -->
+                            <div class="modal fade" id="myModal<?php echo $row_reservas['rcodigoexemplar']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-center" id="myModalLabel">Dados da Reserva</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <dl class="row">
+                                                <dt class="col-sm-3">Matrícula:</dt>
+                                                <dd class="col-sm-9"><?php echo $row_reservas['rmatricula']; ?></dd>
+
+                                                <dt class="col-sm-3">Código do Exemplar:</dt>
+                                                <dd class="col-sm-9"><?php echo $row_reservas['rcodigoexemplar']; ?></dd>
+
+                                                <dt class="col-sm-3">Data da Reserva:</dt>
+                                                <dd class="col-sm-9"><?php echo $row_reservas['rdata']; ?></dd>
+                                            </dl>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a class="btn btn-outline-success" role="button" data-dismiss="modal" data-toggle="modal" data-target='#modalCadastrarEmprestimo<?php echo $row_reservas['rcodigoexemplar']; ?>'>Emprestar</a>
+                                            <a class="btn btn-outline-danger" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fim Modal Visualizar -->
+
+                            <!-- Inicio Modal Cadastrar Reserva -->
+                            <div class="modal fade" id="modalCadastrarReserva" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-center" id="myModalLabel">Cadastrar Reserva</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="POST" action="processa/novoReserva.php">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Matrícula:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" name="rmatricula">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Código do Exemplar:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="inputPassword3" name="rcodigoexemplar">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Data da Reserva:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="date" class="form-control" name="rdata">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="btn btn-outline-success">Cadastrar</button>
+                                                        <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fim Modal Cadastrar Reserva -->
+
+                            <!-- Inicio Modal Cadastrar Empréstimo -->
+                            <div class="modal fade" id="modalCadastrarEmprestimo<?php echo $row_reservas['rcodigoexemplar']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-center" id="myModalLabel">Cadastrar Empréstimo</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <dl class="row">
+                                                <dt class="col-sm-3">Matrícula:</dt>
+                                                <dd class="col-sm-9"><?php echo $row_reservas['rmatricula']; ?></dd>
+
+                                                <dt class="col-sm-3">Código do Exemplar:</dt>
+                                                <dd class="col-sm-9"><?php echo $row_reservas['rcodigoexemplar']; ?></dd>
+
+                                                <dt class="col-sm-3">Data da Reserva:</dt>
+                                                <dd class="col-sm-9"><?php echo $row_reservas['rdata']; ?></dd>
+                                            </dl>
+                                            <form method="POST" action="processa/novoEmprestimo.php">
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Data do Empréstimo:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="date" class="form-control" id="inputPassword3" name="dataemprestimo">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Data de Devolução:</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="date" class="form-control" id="inputPassword3" name="dataentrega">
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="ematricula" value="<?php echo $row_reservas['rmatricula']; ?>">
+                                                <input type="hidden" name="ecodigoexemplar" value="<?php echo $row_reservas['rcodigoexemplar']; ?>">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-10">
+                                                        <button type="submit" class="btn btn-outline-success">Confirmar</button>
+                                                        <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fim Modal Cadastrar Empréstimo-->
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 
