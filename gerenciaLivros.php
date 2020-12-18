@@ -51,19 +51,18 @@ $resultado_livro = pg_query($conexao, $result_livro);
     <main>
         <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
-            <div class="list-group-item">
-                <div class="d-flex">
-                    <div class="mr-auto p-2">
-                        <h2 class="display-4 titulo">Gerenciar Livros</h2>
-                    </div>
-                    <a href="#">
-                        <div class="p-2">
-                            <button class="btn btn-outline-success btn-sm">
-                                Cadastrar
-                            </button>
-                        </div>
-                    </a>
+        <div class="d-flex justify-content-center">
+                <div class="title">
+                    <h1>Gerenciar Livros</h1>
                 </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <a href="#">
+                    <div class="p-2">
+                        <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#modalCadastrarLivro"> Cadastrar </button>
+                    </div>
+                </a>
+            </div>
                 <div class="table-responsive">
                     <table id="listaLivros" class="table table-striped table-bordered table-hover">
                         <thead>
@@ -240,7 +239,6 @@ $resultado_livro = pg_query($conexao, $result_livro);
                     </table>
                 </div>
             </div>
-        </div>
         </div>
     </main>
 
