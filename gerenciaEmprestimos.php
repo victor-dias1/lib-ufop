@@ -62,6 +62,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                 <a href="#">
                     <div class="p-2">
                         <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#modalCadastrarEmprestimo"> Cadastrar </button>
+                        <button type="button" class="btn btn-lg btn-outline-warning" data-toggle="modal" data-target="#modalDevolverEmprestimo"> Devolver </button>
                     </div>
                 </a>
             </div>
@@ -123,7 +124,6 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                             </dl>
                                         </div>
                                         <div class="modal-footer">
-                                            <a class="btn btn-outline-success" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalDevolverEmprestimo<?php echo $row_emprestimos['ecodigoexemplar']; ?>" role="button">Renovar</a>
                                             <a class="btn btn-outline-warning" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalRenovar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" role="button">Renovar</a>
                                             <a class="btn btn-outline-danger" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                         </div>
