@@ -172,15 +172,15 @@ $resultado_reservas = pg_query($conexao, $result_reservas);
                                             </dl>
                                             <form method="POST" action="processa/novoEmprestimo.php">
                                                 <div class="form-group row">
-                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Data do Empréstimo:</label>
+                                                    <label class="col-sm-2 col-form-label">Data do Empréstimo:</label>
                                                     <div class="col-sm-10">
-                                                        <input type="date" class="form-control" id="inputPassword3" name="dataemprestimo">
+                                                        <input type="date" class="form-control" name="dataemprestimo">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Data de Devolução:</label>
+                                                    <label class="col-sm-2 col-form-label">Data de Devolução:</label>
                                                     <div class="col-sm-10">
-                                                        <input type="date" class="form-control" id="inputPassword3" name="dataentrega">
+                                                        <input type="date" class="form-control" name="dataentrega">
                                                     </div>
                                                 </div>
                                                 <input type="hidden" name="ematricula" value="<?php echo $row_reservas['rmatricula']; ?>">
