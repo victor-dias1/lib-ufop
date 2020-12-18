@@ -243,11 +243,11 @@ $resultado_livro = pg_query($conexao, $result_livro);
                                         </div>
                                         <div class="modal-body">
                                             <blockquote class="blockquote">
-                                                <p class="mb-0">Tem certeza que deseja excluir o livro '<?php echo $row_livros['pnome']; ?>' do seu Banco de Dados?</p>
+                                                <p class="mb-0">Tem certeza que deseja excluir o livro '<?php echo $row_livros['titulo']; ?>' do seu Banco de Dados?</p>
                                             </blockquote>
                                         </div>
                                         <div class="modal-footer">
-                                            <a class="btn btn-outline-danger" href='processa/deletaLivro.php?id=<?php echo $row_livros['matricula']; ?>' role="button">Excluir</a>
+                                            <a class="btn btn-outline-danger" href='processa/deletaLivro.php?id=<?php echo $row_livros['id_livros']; ?>' role="button">Excluir</a>
                                             <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                         </div>
                                     </div>
