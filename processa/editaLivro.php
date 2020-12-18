@@ -8,8 +8,8 @@
     $autor = filter_input(INPUT_POST, 'autor', FILTER_SANITIZE_STRING);
     $edicao = filter_input(INPUT_POST, 'edicao', FILTER_SANITIZE_STRING);
 
-    $result_livro = "UPDATE livros SET nome= '$nome', isbn= '$isbn', autor= '$autor', 
-                                      edicao= '$edicao', WHERE id_livros= '$id_livros'";
+    $result_livro = "UPDATE livros SET nome='$nome', isbn='$isbn', autor='$autor', edicao='$edicao'
+                    WHERE id_livros='$id_livros'";
     $result_query = pg_query($conexao, $result_livro);
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
     if($result_query){
         echo"
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-        https://lib-teste.herokuapp.com/admin.php?link=4'>
+        https://lib-ufop.herokuapp.com/gerenciaLivros.php'>
         <script type=\"text/javascript\">
             alert(\"Livro editado com Sucesso!\");
         </script>
@@ -33,7 +33,7 @@
     }else{
         echo"
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-        https://lib-teste.herokuapp.com/admin.php?link=4'>
+        https://lib-ufop.herokuapp.com/gerenciaLivros.php'>
         <script type=\"text/javascript\">
             alert(\"Erro ao editar livro!\");
         </script>
