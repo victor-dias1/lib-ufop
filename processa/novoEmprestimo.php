@@ -2,7 +2,7 @@
     session_start();
     include_once("../conexao.php");
 
-    $ematricula = filter_input(INPUT_POST, 'ematricula', FILTER_SANITIZE_NUMBER_INT);
+    $ematricula = filter_input(INPUT_POST, 'ematricula', FILTER_SANITIZE_STRING);
     $ecodigoexemplar = filter_input(INPUT_POST, 'ecodigoexemplar', FILTER_SANITIZE_STRING);
     $dataemprestimo = filter_input(INPUT_POST,'dataemprestimo');
     $dataentrega = filter_input(INPUT_POST,'dataentrega');
