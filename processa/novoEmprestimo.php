@@ -15,7 +15,7 @@
     $result_user = "INSERT INTO emprestimos VALUES ('$ematricula', '$ecodigoexemplar', '$dataemprestimo', '$dataentrega')";
     $result_query = pg_query($conexao, $result_user);
 
-    echo pg_last_error($result_query);
+    echo pg_last_error($conexao);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
