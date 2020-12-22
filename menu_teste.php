@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/dashboard.css">
 
     <script defer src="js/fontawesome-all.min.js"></script>
+    
 </head>
 
 <body>
