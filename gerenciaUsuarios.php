@@ -34,7 +34,11 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <!-- Scripts -->
     <script>
         $(document).ready(function() {
-            $('#listaUsuarios').DataTable();
+            $('#listaUsuarios').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json"
+                }
+            });
         });
     </script>
     <script>
@@ -308,7 +312,6 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     </main>
 
     <!-- JS Template -->
-    <script src="cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/dashboard.js"></script>
