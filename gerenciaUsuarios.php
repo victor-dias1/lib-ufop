@@ -67,7 +67,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                     </div>
                 </a>
             </div>
-            <div class="table-responsive-sm">
+            <div class="table-responsive" style="width:80%">
                 <table id="listaUsuarios" class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
