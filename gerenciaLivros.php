@@ -40,7 +40,11 @@ $resultado_livro = pg_query($conexao, $result_livro);
     <!-- Scripts -->
     <script>
         $(document).ready(function() {
-            $('#listaLivros').DataTable();
+            $('#listaLivros').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Portuguese-Brasil.json"
+                }
+            });
         });
     </script>
 </head>
