@@ -278,7 +278,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                             </blockquote>
                                         </div>
                                         <div class="modal-footer">
-                                            <a class="btn btn-outline-danger" href='processa/deletaEmprestimos.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>' role="button">Excluir</a>
+                                            <a class="btn btn-outline-danger" href='processa/deletaEmprestimo.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>' role="button">Excluir</a>
                                             <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                         </div>
                                     </div>
