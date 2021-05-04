@@ -97,7 +97,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                 <td><?php echo $row_emprestimos['dataentrega']; ?></td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Visualizar</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" href="processa/deletaEmprestimo.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>"> Apagar </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Apagar</button>
                                 </td>
                             </tr>
                             <!-- Inicio Modal Visualizar -->
@@ -264,6 +264,27 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
 
                             </div>
                             <!-- Fim Modal Renovar-->
+                            <!-- Inicio Modal Apagar-->
+                            <div class="modal fade" id="modalApagar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title text-center" id="myModalLabel">Deletar Empréstimo</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <blockquote class="blockquote">
+                                                <p class="mb-0">Tem certeza que deseja excluir o empréstimo de '<?php echo $row_emprestimos['ecodigoexemplar']; ?>' do seu Banco de Dados?</p>
+                                            </blockquote>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a class="btn btn-outline-danger" href='processa/deletaEmprestimos.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>' role="button">Excluir</a>
+                                            <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Fim Modal Apagar-->
                         <?php
                         }
                         ?>
