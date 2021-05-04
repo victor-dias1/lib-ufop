@@ -97,7 +97,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                 <td><?php echo $row_emprestimos['dataentrega']; ?></td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Visualizar</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger"> Apagar </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger" href="processa/deletaEmprestimo.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>"> Apagar </button>
                                 </td>
                             </tr>
                             <!-- Inicio Modal Visualizar -->
