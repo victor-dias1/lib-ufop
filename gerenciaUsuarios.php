@@ -55,7 +55,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <main>
         <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
-            <div class="d-flex justify-content-start align-self-sm-center">
+            <div class="d-flex justify-content-start align-self-end">
                 <div class="title">
                     <h1>Gerenciar Usuários</h1>
                 </div>
