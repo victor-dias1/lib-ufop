@@ -55,15 +55,8 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <main>
         <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
-            <div class="d-flex justify-content-start">
-                <h1 class="display-2">Gerenciar Usuários</h1>
-            </div>
-            <div class="d-flex justify-content-end">
-                <a href="#">
-                    <div class="p-2">
-                        <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#modalCadastrar"> Cadastrar </button>
-                    </div>
-                </a>
+            <div class="d-flex justify-content-center">
+                <h1 class="display-3">Gerenciar Usuários</h1>
             </div>
             <div class="d-flex justify-content-center">
                 <div class="table-responsive" style="width:90%">
@@ -306,6 +299,13 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="#">
+                    <div class="p-2">
+                        <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#modalCadastrar"> Cadastrar </button>
+                    </div>
+                </a>
             </div>
         </div>
         </div>
