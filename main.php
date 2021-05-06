@@ -80,7 +80,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card border-info mb-3" style="max-width: 18rem;">
+                        <div class="card border-info mb-3">
                             <div class="card-body text-info">
                                 <i class="fas fa-users fa-3x"></i>
                                 <h6 class="card-title">Usuários</h6>
@@ -89,8 +89,8 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-info text-white">
-                            <div class="card-body">
+                        <div class="card border-primary mb-3">
+                            <div class="card-body text-primary">
                                 <i class="fas fa-file fa-3x"></i>
                                 <h6 class="card-title">Artigos</h6>
                                 <h2 class="lead">63</h2>
@@ -98,15 +98,15 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-success text-white">
-                            <div class="card-body">
+                        <div class="card border-secondary mb-3">
+                            <div class="card-body text-secondary">
                                 <i class="fas fa-eye fa-3x"></i>
                                 <h6 class="card-title">Visitas</h6>
                                 <h2 class="lead">648</h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6">
+                    <!---<div class="col-lg-3 col-sm-6">
                         <div class="card bg-info text-white">
                             <div class="card-body">
                                 <i class="fas fa-comments fa-3x"></i>
@@ -114,7 +114,7 @@
                                 <h2 class="lead">17</h2>
                             </div>
                         </div>
-                    </div>
+                    </div>--->
                 </div>
             </div>
         </div>
