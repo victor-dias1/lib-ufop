@@ -58,62 +58,177 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
         <?php include_once('includes/sidebar.php'); ?>
         <div class="content p-1">
             <div class="d-flex justify-content-center">
-                <div class="title">
-                    <h1>Empréstimos</h1>
-                </div>
+                <h1 class="display-3">Gerenciar Empréstimos</h1>
             </div>
-            <div class="d-flex justify-content-end">
-                <a href="#">
-                    <div class="p-2">
-                        <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#modalCadastrarEmprestimo"> Cadastrar </button>
-                        <button type="button" class="btn btn-lg btn-outline-warning" data-toggle="modal" data-target="#modalDevolverEmprestimo"> Devolver </button>
-                    </div>
-                </a>
-            </div>
-            <div class="table-responsive">
-                <table id="listaEmprestimos" class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Matrícula</th>
-                            <th>Cód. Exemplar</th>
-                            <th>Título</th>
-                            <th>Edição</th>
-                            <th>Autor</th>
-                            <th>Data Empréstimo</th>
-                            <th>Data Devolução</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        while ($row_emprestimos = pg_fetch_assoc($resultado_emprestimos)) {
-                        ?>
+            <div class="d-flex justify-content-center">
+                <div class="table-responsive" style="width: 90%">
+                    <table id="listaEmprestimos" class="table table-striped table-bordered table-hover">
+                        <thead>
                             <tr>
-                                <td><?php echo $row_emprestimos['pnome']; ?> </br>
-                                    <?php echo $row_emprestimos['unome']; ?></td>
-                                <td><?php echo $row_emprestimos['matricula']; ?></td>
-                                <td><?php echo $row_emprestimos['ecodigoexemplar']; ?></td>
-                                <td><?php echo $row_emprestimos['nome']; ?></td>
-                                <td><?php echo $row_emprestimos['edicao']; ?></td>
-                                <td><?php echo $row_emprestimos['autor']; ?></td>
-                                <td><?php echo $row_emprestimos['dataemprestimo']; ?></td>
-                                <td><?php echo $row_emprestimos['dataentrega']; ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Visualizar</button>
-                                    <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Apagar</button>
-                                </td>
+                                <th>Nome</th>
+                                <th>Matrícula</th>
+                                <th>Cód. Exemplar</th>
+                                <th>Título</th>
+                                <th>Edição</th>
+                                <th>Autor</th>
+                                <th>Data Empréstimo</th>
+                                <th>Data Devolução</th>
+                                <th>Ações</th>
                             </tr>
-                            <!-- Inicio Modal Visualizar -->
-                            <div class="modal fade" id="myModal<?php echo $row_emprestimos['ecodigoexemplar']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-center" id="myModalLabel">Dados do Empréstimo</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while ($row_emprestimos = pg_fetch_assoc($resultado_emprestimos)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row_emprestimos['pnome']; ?> </br>
+                                        <?php echo $row_emprestimos['unome']; ?></td>
+                                    <td><?php echo $row_emprestimos['matricula']; ?></td>
+                                    <td><?php echo $row_emprestimos['ecodigoexemplar']; ?></td>
+                                    <td><?php echo $row_emprestimos['nome']; ?></td>
+                                    <td><?php echo $row_emprestimos['edicao']; ?></td>
+                                    <td><?php echo $row_emprestimos['autor']; ?></td>
+                                    <td><?php echo $row_emprestimos['dataemprestimo']; ?></td>
+                                    <td><?php echo $row_emprestimos['dataentrega']; ?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Visualizar</button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Apagar</button>
+                                    </td>
+                                </tr>
+                                <!-- Inicio Modal Visualizar -->
+                                <div class="modal fade" id="myModal<?php echo $row_emprestimos['ecodigoexemplar']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="myModalLabel">Dados do Empréstimo</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <dl class="row">
+                                                    <dt class="col-sm-3">Matrícula:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_emprestimos['matricula']; ?></dd>
+
+                                                    <dt class="col-sm-3">Código do Exemplar:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_emprestimos['ecodigoexemplar']; ?></dd>
+
+                                                    <dt class="col-sm-3">Data do Empréstimo:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_emprestimos['dataemprestimo']; ?></dd>
+
+                                                    <dt class="col-sm-3">Data de Devolução:</dt>
+                                                    <dd class="col-sm-9"><?php echo $row_emprestimos['dataentrega']; ?></dd>
+                                                </dl>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a class="btn btn-outline-warning" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalRenovar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" role="button">Renovar</a>
+                                                <a class="btn btn-outline-danger" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                                            </div>
                                         </div>
-                                        <div class="modal-body">
-                                            <dl class="row">
+                                    </div>
+                                </div>
+                                <!-- Fim Modal Visualizar -->
+
+                                <!-- Inicio Modal Cadastrar Empréstimo -->
+                                <div class="modal fade" id="modalCadastrarEmprestimo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="myModalLabel">Cadastrar Empréstimo</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST" action="processa/novoEmprestimo.php">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Matrícula:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" name="ematricula">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Código do Exemplar:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" name="ecodigoexemplar">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Data de Empréstimo:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="date" class="form-control" name="dataemprestimo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Data de Devolução:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="date" class="form-control" name="dataentrega">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-10">
+                                                            <button type="submit" class="btn btn-outline-success">Cadastrar</button>
+                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fim Modal Cadastrar Empréstimo-->
+
+                                <!-- Inicio Modal Devolver -->
+                                <div class="modal fade" id="modalDevolverEmprestimo" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Devolução</h5>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <span>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST" action="processa/devolucao.php">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Matrícula:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" name="ematricula">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Código do Exemplar:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" name="ecodigoexemplar">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Data de Devolução:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="date" class="form-control" name="dataentrega">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-10">
+                                                            <button type="submit" class="btn btn-outline-success">Confirmar</button>
+                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Fim Modal Devolver-->
+
+                                <!-- Inicio Modal Renovar -->
+                                <div class="modal fade" id="modalRenovar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Renovação</h5>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <span>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
                                                 <dt class="col-sm-3">Matrícula:</dt>
                                                 <dd class="col-sm-9"><?php echo $row_emprestimos['matricula']; ?></dd>
 
@@ -122,178 +237,63 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
 
                                                 <dt class="col-sm-3">Data do Empréstimo:</dt>
                                                 <dd class="col-sm-9"><?php echo $row_emprestimos['dataemprestimo']; ?></dd>
-
-                                                <dt class="col-sm-3">Data de Devolução:</dt>
-                                                <dd class="col-sm-9"><?php echo $row_emprestimos['dataentrega']; ?></dd>
-                                            </dl>
+                                                <form method="POST" action="processa/renovacao.php">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Nova Data:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="date" class="form-control" name="dataentrega">
+                                                        </div>
+                                                        <input type="hidden" name="matricula" value="<?php echo $row_emprestimos['matricula']; ?>">
+                                                        <input type="hidden" name="codExemplar" value="<?php echo $row_emprestimos['ecodigoexemplar']; ?>">
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-10">
+                                                            <button type="submit" class="btn btn-outline-success">Confirmar</button>
+                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <a class="btn btn-outline-warning" role="button" data-dismiss="modal" data-toggle="modal" data-target="#modalRenovar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" role="button">Renovar</a>
-                                            <a class="btn btn-outline-danger" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                                    </div>
+
+                                </div>
+                                <!-- Fim Modal Renovar-->
+                                <!-- Inicio Modal Apagar-->
+                                <div class="modal fade" id="modalApagar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="myModalLabel">Deletar Empréstimo</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <blockquote class="blockquote">
+                                                    <p class="mb-0">Tem certeza que deseja excluir o empréstimo de '<?php echo $row_emprestimos['ecodigoexemplar']; ?>' do seu Banco de Dados?</p>
+                                                </blockquote>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a class="btn btn-outline-danger" href='processa/deletaEmprestimo.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>' role="button">Excluir</a>
+                                                <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Fim Modal Visualizar -->
-
-                            <!-- Inicio Modal Cadastrar Empréstimo -->
-                            <div class="modal fade" id="modalCadastrarEmprestimo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-center" id="myModalLabel">Cadastrar Empréstimo</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form method="POST" action="processa/novoEmprestimo.php">
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Matrícula:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="ematricula">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Código do Exemplar:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="ecodigoexemplar">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Data de Empréstimo:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="dataemprestimo">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Data de Devolução:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="dataentrega">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-outline-success">Cadastrar</button>
-                                                        <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Fim Modal Cadastrar Empréstimo-->
-
-                            <!-- Inicio Modal Devolver -->
-                            <div class="modal fade" id="modalDevolverEmprestimo" tabindex="-1" role="dialog">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Devolução</h5>
-                                            <button type="button" class="close" data-dismiss="modal">
-                                                <span>&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form method="POST" action="processa/devolucao.php">
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Matrícula:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="ematricula">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Código do Exemplar:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" name="ecodigoexemplar">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Data de Devolução:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="dataentrega">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-outline-success">Confirmar</button>
-                                                        <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- Fim Modal Devolver-->
-
-                            <!-- Inicio Modal Renovar -->
-                            <div class="modal fade" id="modalRenovar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" tabindex="-1" role="dialog">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Renovação</h5>
-                                            <button type="button" class="close" data-dismiss="modal">
-                                                <span>&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <dt class="col-sm-3">Matrícula:</dt>
-                                            <dd class="col-sm-9"><?php echo $row_emprestimos['matricula']; ?></dd>
-
-                                            <dt class="col-sm-3">Código do Exemplar:</dt>
-                                            <dd class="col-sm-9"><?php echo $row_emprestimos['ecodigoexemplar']; ?></dd>
-
-                                            <dt class="col-sm-3">Data do Empréstimo:</dt>
-                                            <dd class="col-sm-9"><?php echo $row_emprestimos['dataemprestimo']; ?></dd>
-                                            <form method="POST" action="processa/renovacao.php">
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Nova Data:</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="date" class="form-control" name="dataentrega">
-                                                    </div>
-                                                    <input type="hidden" name="matricula" value="<?php echo $row_emprestimos['matricula']; ?>">
-                                                    <input type="hidden" name="codExemplar" value="<?php echo $row_emprestimos['ecodigoexemplar']; ?>">
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-outline-success">Confirmar</button>
-                                                        <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <!-- Fim Modal Renovar-->
-                            <!-- Inicio Modal Apagar-->
-                            <div class="modal fade" id="modalApagar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title text-center" id="myModalLabel">Deletar Empréstimo</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <blockquote class="blockquote">
-                                                <p class="mb-0">Tem certeza que deseja excluir o empréstimo de '<?php echo $row_emprestimos['ecodigoexemplar']; ?>' do seu Banco de Dados?</p>
-                                            </blockquote>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a class="btn btn-outline-danger" href='processa/deletaEmprestimo.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>' role="button">Excluir</a>
-                                            <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Fim Modal Apagar-->
-                        <?php
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                                <!-- Fim Modal Apagar-->
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="#">
+                    <div class="p-2">
+                        <button type="button" class="btn btn-lg btn-outline-success" data-toggle="modal" data-target="#modalCadastrarEmprestimo"> Cadastrar </button>
+                        <button type="button" class="btn btn-lg btn-outline-warning" data-toggle="modal" data-target="#modalDevolverEmprestimo"> Devolver </button>
+                    </div>
+                </a>
             </div>
         </div>
         </div>

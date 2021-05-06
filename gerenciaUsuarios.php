@@ -59,7 +59,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                 <h1 class="display-3">Gerenciar Usuários</h1>
             </div>
             <div class="d-flex justify-content-center">
-                <div class="table-responsive" style="width:90%">
+                <div class="table-responsive" style="width: 90%">
                     <table id="listaUsuarios" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
