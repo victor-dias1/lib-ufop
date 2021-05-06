@@ -75,16 +75,16 @@
             <div class="list-group-item">
                 <div class="d-flex">
                     <div class="mr-auto p-2">
-                        <h2 class="display-4 titulo">Painel de Controle</h2>
+                        <h2 class="display-3 titulo">Painel de Controle</h2>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-lg-3 col-sm-6">
                         <div class="card border-info mb-3" style="max-width: 18rem;">
-                            <div class="card-header">Header</div>
                             <div class="card-body text-info">
-                                <h5 class="card-title">Info card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <i class="fas fa-users fa-3x"></i>
+                                <h6 class="card-title">Usuários</h6>
+                                <h2 class="lead">147</h2>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6">
-                        <div class="card bg-gradient-success text-white">
+                        <div class="card bg-success text-white">
                             <div class="card-body">
                                 <i class="fas fa-eye fa-3x"></i>
                                 <h6 class="card-title">Visitas</h6>
