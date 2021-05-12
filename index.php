@@ -22,7 +22,7 @@ session_start();
 
     <div class="form-group">
       <label>E-mail:</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="nome@exemplo.com">
+      <input type="text" id="inputEmail" class="form-control" placeholder="nome@exemplo.com">
     </div>
     <div class="form-group">
       <label>Senha:</label>
