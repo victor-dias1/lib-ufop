@@ -17,7 +17,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Meu Perfil</a>
-                        <a class="dropdown-item" href="index.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                        <a class="dropdown-item" href="sair.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
                     </div>
                 </li>
             </ul>

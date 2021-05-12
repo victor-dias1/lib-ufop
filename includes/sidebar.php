@@ -15,6 +15,6 @@
             </li>
             <li><a href="gerenciaEmprestimos.php"> Empréstimos</a></li>
             <li><a href="gerenciaReservas.php"> Reservas</a></li>
-            <li><a href="index.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            <li><a href="sair.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
         </ul>
     </nav>
