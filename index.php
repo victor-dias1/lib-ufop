@@ -1,21 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <?php
 session_start();
 ?>
-<html lang="pt-br" dir="ltr">
+
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
-  <title>َLogin</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Biblioteca</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/signin.css" rel="stylesheet">
 </head>
 
-<body>
-  <form class="box" action="valida_login.php" method="post">
-    <h1>Login</h1>
-    <input type="text" name="inputEmail" placeholder="Username">
-    <input type="password" name="inputPassword" placeholder="Password">
-    <input type="submit" name="" value="Login">
+<body class="text-center">
+  <form class="form-signin" action="valida_login.php" method="POST">
+    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Faça o login</h1>
+    <label for="inputEmail" class="sr-only">nome@exemplo.com</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputPassword" class="sr-only">Senha</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me">Lembrar
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
   </form>
 </body>
 
