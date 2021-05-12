@@ -26,16 +26,14 @@ session_start();
   <form class="form-signin" action="valida_login.php" method="POST">
     <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Faça o login</h1>
-    <label for="inputEmail" class="sr-only">nome@exemplo.com</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Senha</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox mb-3">
+    <input type="email" id="inputEmail" class="form-control" placeholder="nome@exemplo.com" required autofocus>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+    <!---<div class="checkbox mb-3">
       <label>
-        <input type="checkbox" value="remember-me">Lembrar
+        <input type="checkbox" value="remember-me"> Lembrar
       </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </div>--->
+    <input class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
   </form>
 </body>
 
