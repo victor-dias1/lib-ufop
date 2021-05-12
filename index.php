@@ -22,11 +22,11 @@ session_start();
 
     <div class="form-group">
       <label>E-mail:</label>
-      <input type="text" id="inputEmail" class="form-control" placeholder="nome@exemplo.com">
+      <input type="text" name="inputEmail" class="form-control" placeholder="nome@exemplo.com">
     </div>
     <div class="form-group">
       <label>Senha:</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="******">
+      <input type="password" name="inputPassword" class="form-control" placeholder="******">
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Fazer login</button>
     <p class="text-center">Esqueceu a senha?</p>
