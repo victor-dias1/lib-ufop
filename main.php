@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <?php
+session_start();
 if (!isset($_SESSION['cpf'])) {
-    $_SESSION['login_error'] = "Você não tem permissão para isso!";
+    $_SESSION['login_error'] = "Faça login para continuar!";
     header("Location: index.php");
 }
 ?>
+
 <html lang="pt-br">
 
 <head>
