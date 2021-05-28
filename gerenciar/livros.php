@@ -212,6 +212,12 @@ $resultado_livro = pg_query($conexao, $result_livro);
                                                             <input type="text" class="form-control" name="exlocalizacao" required maxlength="50">
                                                         </div>
                                                     </div>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-10">
+                                                            <button type="submit" class="btn btn-outline-success">Cadastrar</button>
+                                                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                                                        </div>
+                                                    </div>
                                                 </form>
                                             </div>
                                         </div>
