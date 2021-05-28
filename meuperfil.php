@@ -9,7 +9,7 @@ if (!isset($_SESSION['cpf'])) {
 include_once("conexao.php");
 $cpf = $_SESSION['cpf'];
 $result_usuario = "SELECT * FROM usuarios WHERE cpf = '$cpf'";
-$row_user = pg_query($conexao, $result_usuario);
+$row_usuario = pg_query($conexao, $result_usuario);
 ?>
 
 
@@ -56,7 +56,9 @@ $row_user = pg_query($conexao, $result_usuario);
                 <h1 class="display-3">Meu Perfil</h1>
             </div>
             <div class="d-flex justify-content-center">
-
+                <?php
+                $row_user = pg_fetch_assoc($row_usuario)
+                ?>
                 <form method="POST" action="processar/editar/usuario.php">
                     <input type="hidden" name="idUsuario" value="<?php echo $row_user['matricula']; ?>">
                     <div class="form-group row">
