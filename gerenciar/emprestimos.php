@@ -185,7 +185,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="processa/devolucao.php">
+                                                <form method="POST" action="../processar/devolucao.php">
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Matrícula:</label>
                                                         <div class="col-sm-10">
@@ -237,7 +237,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
 
                                                 <dt class="col-sm-3">Data do Empréstimo:</dt>
                                                 <dd class="col-sm-9"><?php echo $row_emprestimos['dataemprestimo']; ?></dd>
-                                                <form method="POST" action="processa/renovacao.php">
+                                                <form method="POST" action="../processar/renovacao.php">
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Nova Data:</label>
                                                         <div class="col-sm-10">
@@ -274,7 +274,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                                 </blockquote>
                                             </div>
                                             <div class="modal-footer">
-                                                <a class="btn btn-outline-danger" href='processa/deletaEmprestimo.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>' role="button">Excluir</a>
+                                                <a class="btn btn-outline-danger" href='../processar/deletar/emprestimo.php?id=<?php echo $row_emprestimos['ecodigoexemplar']; ?>' role="button">Excluir</a>
                                                 <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                             </div>
                                         </div>

@@ -93,7 +93,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="processa/novoUsuario.php">
+                                                <form method="POST" action="../processar/cadastrar/usuario.php">
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">CPF:</label>
                                                         <div class="col-sm-10">
@@ -197,7 +197,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="processa/editaUsuario.php">
+                                                <form method="POST" action="../processar/editar/usuario.php">
                                                     <input type="hidden" name="idUsuario" value="<?php echo $row_usuario['matricula']; ?>">
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">CPF:</label>
@@ -286,7 +286,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                                 </blockquote>
                                             </div>
                                             <div class="modal-footer">
-                                                <a class="btn btn-outline-danger" href='processa/deletaUsuario.php?id=<?php echo $row_usuario['matricula']; ?>' role="button">Excluir</a>
+                                                <a class="btn btn-outline-danger" href='../processar/deletar/usuario.php?id=<?php echo $row_usuario['matricula']; ?>' role="button">Excluir</a>
                                                 <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                             </div>
                                         </div>

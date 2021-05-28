@@ -128,7 +128,7 @@ $resultado_livro = pg_query($conexao, $result_livro);
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="processa/novoLivro.php">
+                                                <form method="POST" action="../processar/cadastrar/livro.php">
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">ID:</label>
                                                         <div class="col-sm-10">
@@ -236,7 +236,7 @@ $resultado_livro = pg_query($conexao, $result_livro);
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="processa/editaLivro.php">
+                                                <form method="POST" action="../processar/editar/livro.php">
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Título:</label>
                                                         <div class="col-sm-10">
@@ -290,7 +290,7 @@ $resultado_livro = pg_query($conexao, $result_livro);
                                                 </blockquote>
                                             </div>
                                             <div class="modal-footer">
-                                                <a class="btn btn-outline-danger" href='processa/deletaLivro.php?id=<?php echo $row_livros['id_livros']; ?>' role="button">Excluir</a>
+                                                <a class="btn btn-outline-danger" href='../processar/deletar/livro.php?id=<?php echo $row_livros['id_livros']; ?>' role="button">Excluir</a>
                                                 <a class="btn btn-outline-primary" role="button" data-dismiss="modal" aria-label="Close">Cancelar</a>
                                             </div>
                                         </div>
