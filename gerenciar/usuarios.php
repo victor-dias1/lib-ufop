@@ -1,5 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['cpf'])) {
+    $_SESSION['login_error'] = "Faça login para continuar!";
+    header("Location: index.php");
+}
+
 include_once("../conexao.php");
+
 $result_usuario = "SELECT * FROM usuarios";
 $row_usuario_usuario = pg_query($conexao, $result_usuario);
 ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../conexao.php");
+include_once("../../conexao.php");
 
 $cpf = filter_input(INPUT_POST, 'cpf', FILTER_SANITIZE_STRING);
 $tipo = filter_input(INPUT_POST, 'tipo');

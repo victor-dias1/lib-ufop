@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../conexao.php");
+include_once("../../conexao.php");
 
 $rmatricula = filter_input(INPUT_POST, 'rmatricula', FILTER_SANITIZE_NUMBER_INT);
 $rcodigoexemplar = filter_input(INPUT_POST, 'rcodigoexemplar', FILTER_SANITIZE_STRING);
@@ -25,7 +25,7 @@ $result_query = pg_query($conexao, $result_user);
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
         https://lib-ufop.herokuapp.com/gerenciar/reservas.php'>
         <script type=\"text/javascript\">
-            alert(\"Reserva realizada com Sucesso!\");
+            alert(\"Reserva realizada com sucesso!\");
         </script>
         ";
     } else {

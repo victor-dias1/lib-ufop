@@ -1,5 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['cpf'])) {
+    $_SESSION['login_error'] = "Faça login para continuar!";
+    header("Location: index.php");
+}
+
 include_once("../conexao.php");
+
 $result_reservas = "SELECT * FROM reservas";
 $resultado_reservas = pg_query($conexao, $result_reservas);
 ?>

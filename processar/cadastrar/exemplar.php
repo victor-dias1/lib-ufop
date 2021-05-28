@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../conexao.php");
+include_once("../../conexao.php");
 
 $cod_exemplar = filter_input(INPUT_POST, 'codigoexemplar', FILTER_SANITIZE_STRING);
 $cod_local = filter_input(INPUT_POST, 'codlocalizacao', FILTER_SANITIZE_STRING);

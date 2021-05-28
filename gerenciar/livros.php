@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['cpf'])) {
+    $_SESSION['login_error'] = "Faça login para continuar!";
+    header("Location: index.php");
+}
+
 include_once("../conexao.php");
 
 $result_livro = "SELECT COUNT(exisbn), id_livros, nome, autor, edicao

@@ -100,7 +100,7 @@ if (!isset($_SESSION['cpf'])) {
                         <div class="card border-primary mb-3">
                             <div class="card-body text-primary">
                                 <i class="fas fa-file fa-3x"></i>
-                                <h6 class="card-title">Artigos</h6>
+                                <h6 class="card-title">Empréstimos</h6>
                                 <h2 class="lead">63</h2>
                             </div>
                         </div>
@@ -109,7 +109,7 @@ if (!isset($_SESSION['cpf'])) {
                         <div class="card border-secondary mb-3">
                             <div class="card-body text-secondary">
                                 <i class="fas fa-eye fa-3x"></i>
-                                <h6 class="card-title">Visitas</h6>
+                                <h6 class="card-title">Livros</h6>
                                 <h2 class="lead">648</h2>
                             </div>
                         </div>

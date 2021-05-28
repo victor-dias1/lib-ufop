@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../conexao.php");
+include_once("../../conexao.php");
 
 $id_exemplar = $_GET['id'];
 $result_livro = "DELETE FROM reservas WHERE rcodigoexemplar = '$id_exemplar'";

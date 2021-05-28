@@ -1,5 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['cpf'])) {
+    $_SESSION['login_error'] = "Faça login para continuar!";
+    header("Location: index.php");
+}
+
 include_once("../conexao.php");
+
 $result_emprestimos = " SELECT pnome, unome, matricula, ecodigoexemplar, nome, edicao, autor, dataemprestimo, dataentrega 
                         FROM usuarios
                         INNER JOIN emprestimos ON ematricula = matricula
