@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 include_once("conexao.php");
 
 $usuario = filter_input(INPUT_POST, 'inputEmail', FILTER_SANITIZE_EMAIL);
