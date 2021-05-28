@@ -178,6 +178,47 @@ $resultado_livro = pg_query($conexao, $result_livro);
                                 </div>
                                 <!-- Fim Modal Cadastrar Livro -->
 
+                                <!-- Inicio Modal Cadastrar Exemplar-->
+                                <div class="modal fade" id="modalCadastrarExemplar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-center" id="myModalLabel">Cadastrar Exemplar</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST" action="../processar/cadastrar/exemplar.php">
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Código Exemplar:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" name="codigoexemplar" required maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Código Localização:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" name="codlocalizacao" required maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">ISBN:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" name="exisbn" required maxlength="30">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">Local:</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" name="exlocalizacao" required maxlength="50">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Fim Modal Cadastrar Exemplar -->
+
                                 <!-- Inicio Modal Editar-->
                                 <div class="modal fade" id="modalEditar<?php echo $row_livros['id_livros']; ?>" tabindex="-1" role="dialog">
                                     <div class="modal-dialog modal-lg" role="document">
