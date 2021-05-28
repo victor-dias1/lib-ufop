@@ -8,7 +8,7 @@ $ex_isbn = filter_input(INPUT_POST, 'exisbn', FILTER_SANITIZE_STRING);
 $ex_local = filter_input(INPUT_POST, 'exlocalizacao', FILTER_SANITIZE_STRING);
 
 
-$result_user = "INSERT INTO exemplares VALUES ('$cod_exemplar', '$cod_local', 0 , 0, '$ex_isbn', '$ex_local')";
+$result_user = "INSERT INTO exemplares VALUES ('$cod_exemplar', '$cod_local', '0', '0', '$ex_isbn', '$ex_local')";
 $result_query = pg_query($conexao, $result_user);
 ?>
 
