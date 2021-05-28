@@ -5,7 +5,13 @@ if (!isset($_SESSION['cpf'])) {
     $_SESSION['login_error'] = "Faça login para continuar!";
     header("Location: index.php");
 }
+
+include_once("conexao.php");
+$cpf = $_SESSION['cpf'];
+$result_usuario = "SELECT * FROM usuarios WHERE cpf = '$cpf'";
+$row_user = pg_query($conexao, $result_usuario);
 ?>
+
 
 <html lang="pt-br">
 
@@ -41,44 +47,87 @@ if (!isset($_SESSION['cpf'])) {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
-        <a class="sidebar-toggle text-light mr-3">
-            <span class="navbar-toggler-icon"></span>
-        </a>
-        <a class="navbar-brand" href="main.php">Biblioteca</a>
+    <?php include_once('includes/header.php'); ?>
 
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle menu-header" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-                        <img class="rounded-circle" src="imagem/icon.png" width="20" height="20"> &nbsp;<span class="d-none d-sm-inline">Usuário</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="meuperfil.php"><i class="fas fa-user"></i> Meu Perfil</a>
-                        <a class="dropdown-item" href="sair.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+    <main>
+        <?php include_once('includes/sidebar.php'); ?>
+        <div class="content p-1">
+            <div class="d-flex justify-content-center">
+                <h1 class="display-3">Meu Perfil</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+
+                <form method="POST" action="processar/editar/usuario.php">
+                    <input type="hidden" name="idUsuario" value="<?php echo $row_user['matricula']; ?>">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">CPF:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="cpf" value="<?php echo $row_user['cpf'] ?>" pattern="[0-9]{11}" required maxlength="11" minlength="11">
+                        </div>
                     </div>
-                </li>
-            </ul>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Nome:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="pnome" value="<?php echo $row_user['pnome'] ?>" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Sobrenome:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="unome" value="<?php echo $row_user['unome'] ?>" pattern="[A-Za-zÀ-ú ']{3,}" required maxlength="30" minlength="3">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Matrícula:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="matricula" value="<?php echo $row_user['matricula'] ?>" required maxlength="30">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">E-mail:</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="email" value="<?php echo $row_user['email'] ?>" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Senha:</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="senha" value="<?php echo $row_user['senha'] ?>" required maxlength="20" minlength="4">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Tipo de Usuário:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="tipo" required>
+                                <option>Selecione</option>
+                                <option value="1" <?php
+                                                    if ($row_user['tipo_usuario'] == 1) {
+                                                        echo 'selected';
+                                                    }
+                                                    ?>>Administrador</option>
+                                <option value="0" <?php
+                                                    if ($row_user['tipo_usuario'] == 0) {
+                                                        echo 'selected';
+                                                    }
+                                                    ?>>Aluno</option>
+                                <option value="2" <?php
+                                                    if ($row_user['tipo_usuario'] == 2) {
+                                                        echo 'selected';
+                                                    }
+                                                    ?>>Professor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-outline-success">Salvar</button>
+                            <button class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </nav>
-
-    <div class="d-flex">
-        <nav class="sidebar">
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#submenu2" data-toggle="collapse"> Gerência</a>
-                    <ul id="submenu2" class="list-unstyled collapse">
-                        <li><a href="gerenciar/usuarios.php"><i class="fas fa-users"></i> Usuários</a></li>
-                        <li><a href="gerenciar/livros.php"><i class="fas fa-book"></i> Livros</a></li>
-                    </ul>
-
-                </li>
-                <li><a href="gerenciar/emprestimos.php"> Empréstimos</a></li>
-                <li><a href="gerenciar/reservas.php"> Reservas</a></li>
-                <li><a href="sair.php"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
-            </ul>
-        </nav>
-    </div>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
