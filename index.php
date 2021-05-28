@@ -29,16 +29,17 @@ session_start();
       <input type="password" name="inputPassword" class="form-control" placeholder="******">
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Fazer login</button>
+    <p class="text-center text-danger">
+      <?php
+      if (isset($_SESSION['login_error'])) {
+        echo ($_SESSION['login_error']);
+        unset($_SESSION['login_error']);
+      }
+      ?>
+    </p>
     <p class="text-center">Esqueceu a senha?</p>
   </form>
-  <p class="text-center text-danger">
-    <?php
-    if (isset($_SESSION['login_error'])) {
-      echo ($_SESSION['login_error']);
-      unset($_SESSION['login_error']);
-    }
-    ?>
-  </p>
+
 </body>
 
 </html>
