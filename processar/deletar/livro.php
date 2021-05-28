@@ -9,7 +9,7 @@
     if($resultado_livro){
         echo"
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-        https://lib-ufop.herokuapp.com/gerenciaLivros.php'>
+        https://lib-ufop.herokuapp.com/gerenciar/livros.php'>
         <script type=\"text/javascript\">
             alert(\"Livro deletado com Sucesso!\");
         </script>
@@ -17,10 +17,9 @@
     }else{
         echo"
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-        https://lib-ufop.herokuapp.com/gerenciaLivros.php'>
+        https://lib-ufop.herokuapp.com/gerenciar/livros.php'>
         <script type=\"text/javascript\">
             alert(\"Erro ao deletar livro!\");
         </script>
         ";
     }
-?>

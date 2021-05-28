@@ -7,7 +7,7 @@
         <a class="sidebar-toggle text-light mr-3">
             <span class="navbar-toggler-icon"></span>
         </a>
-        <a class="navbar-brand" href="main.php">Biblioteca</a>
+        <a class="navbar-brand" href="../main.php">Biblioteca</a>
 
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
@@ -17,7 +17,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Meu Perfil</a>
-                        <a class="dropdown-item" href="sair.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                        <a class="dropdown-item" href="../sair.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
                     </div>
                 </li>
             </ul>

@@ -1,5 +1,5 @@
 <?php
-include_once("conexao.php");
+include_once("../conexao.php");
 $result_emprestimos = " SELECT pnome, unome, matricula, ecodigoexemplar, nome, edicao, autor, dataemprestimo, dataentrega 
                         FROM usuarios
                         INNER JOIN emprestimos ON ematricula = matricula
@@ -21,22 +21,22 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
     <title>Empréstimos</title>
 
     <!-- CSS Template -->
-    <link rel="icon" href="imagem/favicon.ico">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" href="../imagem/favicon.ico">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/fontawesome.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
     <!-- JS Template -->
-    <script defer src="js/fontawesome-all.min.js"></script>
+    <script defer src="../js/fontawesome-all.min.js"></script>
 
     <!-- CSS dataTables -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/dataTables.bootstrap4.min.css">
 
     <!-- JS and JQuery dataTables -->
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap4.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/dataTables.bootstrap4.min.js"></script>
 
     <!-- Scripts -->
     <script>
@@ -52,10 +52,10 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
 
 <body>
 
-    <?php include_once('includes/header.php'); ?>
+    <?php include_once('../includes/header.php'); ?>
 
     <main>
-        <?php include_once('includes/sidebar.php'); ?>
+        <?php include_once('../includes/sidebar.php'); ?>
         <div class="content p-1">
             <div class="d-flex justify-content-center">
                 <h1 class="display-3">Gerenciar Empréstimos</h1>
@@ -259,6 +259,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
 
                                 </div>
                                 <!-- Fim Modal Renovar-->
+
                                 <!-- Inicio Modal Apagar-->
                                 <div class="modal fade" id="modalApagar<?php echo $row_emprestimos['ecodigoexemplar']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
@@ -303,7 +304,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
     <!-- JS Template -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 
 </html>

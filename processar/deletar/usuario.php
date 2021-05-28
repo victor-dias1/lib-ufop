@@ -9,7 +9,7 @@
     if($resultado_usuario){
         echo"
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-        https://lib-ufop.herokuapp.com/gerenciaUsuarios.php'>
+        https://lib-ufop.herokuapp.com/gerenciar/usuarios.php'>
         <script type=\"text/javascript\">
             alert(\"Usuário deletado com Sucesso!\");
         </script>
@@ -17,10 +17,9 @@
     }else{
         echo"
         <META HTTP-EQUIV=REFRESH CONTENT = '0;URL =
-        https://lib-ufop.herokuapp.com/gerenciaUsuarios.php'>
+        https://lib-ufop.herokuapp.com/gerenciar/usuarios.php'>
         <script type=\"text/javascript\">
             alert(\"Erro ao deletar usuário!\");
         </script>
         ";
     }
-?>
