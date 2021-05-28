@@ -136,7 +136,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="processa/novoEmprestimo.php">
+                                                <form method="POST" action="../processar/cadastrar/emprestimo.php">
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Matrícula:</label>
                                                         <div class="col-sm-10">

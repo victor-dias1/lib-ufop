@@ -115,8 +115,8 @@ $resultado_reservas = pg_query($conexao, $result_reservas);
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form method="POST" action="processa/novoReserva.php">
-                                                    <div class="form-group row">
+                                                <form method="POST" action="../processar/cadastrar/reserva.php">
+                                                    <div class=" form-group row">
                                                         <label class="col-sm-2 col-form-label">Matrícula:</label>
                                                         <div class="col-sm-10">
                                                             <input type="text" class="form-control" name="rmatricula">
@@ -166,7 +166,7 @@ $resultado_reservas = pg_query($conexao, $result_reservas);
                                                     <dt class="col-sm-3">Data da Reserva:</dt>
                                                     <dd class="col-sm-9"><?php echo $row_reservas['rdata']; ?></dd>
                                                 </dl>
-                                                <form method="POST" action="processa/novoEmprestimo.php">
+                                                <form method="POST" action="../processar/cadastrar/emprestimo.php">
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Data do Empréstimo:</label>
                                                         <div class="col-sm-10">
