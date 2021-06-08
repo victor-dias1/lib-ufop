@@ -106,7 +106,7 @@ $resultado_emprestimos = pg_query($conexao, $result_emprestimos);
                                     <td><?php echo $row_emprestimos['dataemprestimo']; ?></td>
                                     <td><?php echo $row_emprestimos['dataentrega']; ?></td>
                                     <td>
-                                        <i class="bi bi-plus-circle" data-toggle="modal" data-target="#myModal<?php echo $row_emprestimos['ecodigoexemplar']; ?>"></i>
+                                        <i class="bi bi-plus-circle"></i>
                                         <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#myModal<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Visualizar</button>
                                         <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_emprestimos['ecodigoexemplar']; ?>">Apagar</button>
                                     </td>
