@@ -117,7 +117,6 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                         <img class="botaoTabela" src="../imagem/user.png" alt="user" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">
                                         <img class="botaoTabela" src="../imagem/remove.png" alt="del" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">
                                     </td>
-
                                 </tr>
                                 <!-- Inicio Modal Cadastrar-->
                                 <div class="modal fade" id="modalCadastrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
