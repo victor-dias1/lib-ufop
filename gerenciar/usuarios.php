@@ -17,6 +17,8 @@ include_once("../conexao.php");
 
 $result_usuario = "SELECT * FROM usuarios";
 $row_usuario_usuario = pg_query($conexao, $result_usuario);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +35,7 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/fontawesome.min.css">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <!-- JS Template -->
     <script defer src="../js/fontawesome-all.min.js"></script>
@@ -60,10 +63,26 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
         $('#modalVisualizar').on('shown.bs.modal', function() {
             $('#meuInput').trigger('focus')
         })
+        console.log(window.location.href)
     </script>
 </head>
 
 <body>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/8.6.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="/__/firebase/8.6.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/8.6.2/firebase-auth.js"></script>
+    <script src="/__/firebase/8.6.2/firebase-firestore.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
 
     <?php include_once('../includes/header.php'); ?>
 
@@ -94,12 +113,9 @@ $row_usuario_usuario = pg_query($conexao, $result_usuario);
                                     <td><?php echo $row_usuario['pnome']; ?></td>
                                     <td><?php echo $row_usuario['unome']; ?></td>
                                     <td><?php echo $row_usuario['email']; ?></td>
-                                    <td>
-                                        <div class="botaoVisualizar" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">
-                                            <img src="../imagem/user.png" alt="user">
-                                        </div>
-                                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">Visualizar</button>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">Apagar</button>
+                                    <td class="tdBotoes">
+                                        <img class="botaoTabela" src="../imagem/user.png" alt="user" data-toggle="modal" data-target="#modalVisualizar<?php echo $row_usuario['matricula']; ?>">
+                                        <img class="botaoTabela" src="../imagem/remove.png" alt="del" data-toggle="modal" data-target="#modalApagar<?php echo $row_usuario['matricula']; ?>">
                                     </td>
                                 </tr>
                                 <!-- Inicio Modal Cadastrar-->

@@ -54,3 +54,14 @@ body{
   .box input[type = "submit"]:hover{
     background: #2ecc71;
   }
+
+  .botaoTabela {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  .tdBotoes {
+    display: flex;
+    gap: 10px;
+  }
